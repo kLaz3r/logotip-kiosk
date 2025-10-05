@@ -5,6 +5,15 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  turbopack: {
+    rules: {
+      "*.json": {
+        loaders: ["json-loader"],
+        as: "*.js",
+      },
+    },
+  },
+};
 
 export default config;
