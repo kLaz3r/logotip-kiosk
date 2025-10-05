@@ -96,8 +96,8 @@ export function DesignDetail({ design }: DesignDetailProps) {
         </div>
 
         <div className="mt-10 rounded-2xl border border-black/10 bg-white p-6 md:p-8">
-          <p className="text-primary text-base font-semibold md:text-lg">
-            Întreabă un reprezentant pentru comandă
+          <p className="text-primary text-center text-base font-semibold md:text-lg">
+            Pentru a comanda, discutati cu un operator.
           </p>
         </div>
       </div>
