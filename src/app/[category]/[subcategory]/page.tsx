@@ -30,10 +30,7 @@ export default function SubcategoryPage({ params }: PageProps) {
   if (!subcategory) return notFound();
 
   return (
-    <main
-      className="h-screen overflow-hidden px-4 py-6"
-      style={{ backgroundImage: "url(/logotip-bg.svg)" }}
-    >
+    <main className="h-screen overflow-hidden px-4 py-6">
       <div className="container mx-auto flex h-full min-h-0 flex-col">
         <div className="mb-6 flex shrink-0 items-center gap-4">
           <BackButton />

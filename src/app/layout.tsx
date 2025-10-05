@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { type Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import { AnimatedLayout } from "~/components/AnimatedLayout";
 import { IdleRedirect } from "~/components/IdleRedirect";
 
 export const metadata: Metadata = {
@@ -91,7 +92,7 @@ export default function RootLayout({
     <html lang="ro" className={`${futuraPt.variable} ${montserrat.variable}`}>
       <body>
         <IdleRedirect />
-        {children}
+        <AnimatedLayout>{children}</AnimatedLayout>
       </body>
     </html>
   );

@@ -14,11 +14,8 @@ export default function HomePage() {
   const endIndex = startIndex + itemsPerPage;
   const paginatedCategories = categories.slice(startIndex, endIndex);
   return (
-    <main className="bg-background h-screen overflow-hidden">
-      <section
-        className="container mx-auto h-full bg-cover px-4 py-6"
-        style={{ backgroundImage: "url(/logotip-bg.svg)" }}
-      >
+    <main className="h-screen overflow-hidden">
+      <section className="container mx-auto h-full bg-cover px-4 py-6">
         <div className="flex h-full min-h-0 flex-col">
           <div className="mb-6 flex shrink-0 items-center justify-between gap-4">
             <h1 className="font-display text-3xl font-bold text-white">

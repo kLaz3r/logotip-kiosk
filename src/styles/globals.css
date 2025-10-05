@@ -24,3 +24,17 @@ body {
 body {
   @apply bg-background text-text font-sans antialiased;
 }
+
+/* Global background image so route transitions never expose white */
+html {
+  background-color: var(--color-background);
+}
+
+body {
+  background-image: url("/logotip-bg.svg");
+  background-color: var(--color-background);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
