@@ -22,8 +22,8 @@ export function DesignGrid({
   return (
     <div className="flex min-h-0 flex-1 flex-col">
       <div className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3">
-        {paginatedDesigns.map((d) => (
-          <DesignCard key={d.id} design={d} />
+        {paginatedDesigns.map((d, index) => (
+          <DesignCard key={d.id} design={d} index={startIndex + index} />
         ))}
       </div>
 

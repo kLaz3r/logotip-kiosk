@@ -7,14 +7,19 @@ import type { Category } from "~/data/types";
 interface CategoryCardProps {
   category: Category;
   href: string;
+  index?: number;
 }
 
-export function CategoryCard({ category, href }: CategoryCardProps) {
+export function CategoryCard({ category, href, index = 0 }: CategoryCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.18, ease: "easeOut" }}
+      transition={{
+        duration: 0.1,
+        delay: index * 0.05,
+        ease: "easeOut",
+      }}
     >
       <Link
         href={href}

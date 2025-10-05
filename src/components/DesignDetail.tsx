@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "motion/react";
 import Image from "next/image";
 import type { Design } from "~/data/types";
 
@@ -14,12 +11,7 @@ export function DesignDetail({ design }: DesignDetailProps) {
   const hasTags = Boolean(design.tags?.length);
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-      <motion.div
-        className="relative aspect-square w-full overflow-hidden rounded-xl border border-black/10 bg-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2, ease: "easeOut" }}
-      >
+      <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-black/10 bg-white">
         <Image
           src={design.image}
           alt={design.name}
@@ -28,12 +20,8 @@ export function DesignDetail({ design }: DesignDetailProps) {
           sizes="(max-width: 1024px) 100vw, 50vw"
           priority
         />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2, ease: "easeOut", delay: 0.04 }}
-      >
+      </div>
+      <div>
         <h1 className="font-display text-3xl font-bold text-white">
           {design.name}
         </h1>
@@ -56,12 +44,7 @@ export function DesignDetail({ design }: DesignDetailProps) {
           ) : null}
         </div>
 
-        <motion.div
-          className="mt-8 rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 0.06 }}
-        >
+        <div className="mt-8 rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
           <div className="mb-4 flex items-baseline justify-between gap-3">
             <h2 className="text-text text-base font-semibold tracking-wide uppercase">
               Prețuri
@@ -92,7 +75,7 @@ export function DesignDetail({ design }: DesignDetailProps) {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         <div className="mt-6 space-y-3">
           {design.materials?.length ? (
@@ -112,17 +95,12 @@ export function DesignDetail({ design }: DesignDetailProps) {
           ) : null}
         </div>
 
-        <motion.div
-          className="mt-10 rounded-2xl border border-black/10 bg-white p-6 md:p-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 0.08 }}
-        >
+        <div className="mt-10 rounded-2xl border border-black/10 bg-white p-6 md:p-8">
           <p className="text-primary text-base font-semibold md:text-lg">
             Întreabă un reprezentant pentru comandă
           </p>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
   );
 }

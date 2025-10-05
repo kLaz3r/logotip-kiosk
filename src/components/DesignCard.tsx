@@ -7,14 +7,19 @@ import type { Design } from "~/data/types";
 
 interface DesignCardProps {
   design: Design;
+  index?: number;
 }
 
-export function DesignCard({ design }: DesignCardProps) {
+export function DesignCard({ design, index = 0 }: DesignCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.18, ease: "easeOut" }}
+      transition={{
+        duration: 0.1,
+        delay: index * 0.05,
+        ease: "easeOut",
+      }}
     >
       <Link
         href={`/design/${design.id}`}

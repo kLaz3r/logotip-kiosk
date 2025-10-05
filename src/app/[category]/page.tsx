@@ -1,18 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { use, useState } from "react";
 import { BackButton } from "~/components/BackButton";
+import { CategoryCard } from "~/components/CategoryCard";
 import { DesignGrid } from "~/components/DesignGrid";
 import { NavigationBreadcrumb } from "~/components/NavigationBreadcrumb";
 import { Pagination } from "~/components/Pagination";
-import {
-  getCategoryBySlug,
-  getDesignsByCategory,
-  getFirstImageForCategory,
-} from "~/lib/catalogue";
+import { getCategoryBySlug, getDesignsByCategory } from "~/lib/catalogue";
 
 interface PageProps {
   params: Promise<{ category: string }>;
@@ -31,11 +26,9 @@ export default function CategoryPage({ params }: PageProps) {
   const designs = hasSubcategories ? [] : getDesignsByCategory(category.id);
   const itemsPerPage = 6;
   const subcategories = category.subcategories ?? [];
+  const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedSubcategories = hasSubcategories
-    ? subcategories.slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage,
-      )
+    ? subcategories.slice(startIndex, startIndex + itemsPerPage)
     : [];
 
   return (
@@ -51,35 +44,19 @@ export default function CategoryPage({ params }: PageProps) {
         {hasSubcategories ? (
           <>
             <div className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3">
-              {paginatedSubcategories.map((sc) => {
-                const firstImage = getFirstImageForCategory(category.id, sc.id);
-                return (
-                  <Link
-                    key={sc.id}
-                    href={`/${category.slug}/${sc.slug}`}
-                    className="block h-full"
-                  >
-                    <div className="flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition hover:shadow-md active:scale-[0.98]">
-                      {firstImage && (
-                        <div className="bg-background relative w-full flex-1">
-                          <Image
-                            src={firstImage}
-                            alt={sc.name}
-                            fill
-                            className="object-cover"
-                            sizes="33vw"
-                          />
-                        </div>
-                      )}
-                      <div className="p-3 text-center">
-                        <h2 className="font-display text-primary text-lg leading-tight font-semibold">
-                          {sc.name}
-                        </h2>
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
+              {paginatedSubcategories.map((sc, index) => (
+                <CategoryCard
+                  key={sc.id}
+                  category={{
+                    id: sc.id,
+                    name: sc.name,
+                    slug: sc.slug,
+                    description: sc.description,
+                  }}
+                  href={`/${category.slug}/${sc.slug}`}
+                  index={startIndex + index}
+                />
+              ))}
             </div>
             <div className="mt-auto">
               <Pagination
