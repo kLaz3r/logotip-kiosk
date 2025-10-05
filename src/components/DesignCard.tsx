@@ -26,9 +26,6 @@ export function DesignCard({ design }: DesignCardProps) {
         <h4 className="font-display text-primary text-base leading-tight font-semibold">
           {design.name}
         </h4>
-        {design.customizable ? (
-          <p className="text-text/70 mt-1 text-[11px]">Poate fi personalizat</p>
-        ) : null}
       </div>
     </Link>
   );
