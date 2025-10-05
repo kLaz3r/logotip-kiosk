@@ -7,7 +7,11 @@ import { CategoryCard } from "~/components/CategoryCard";
 import { DesignGrid } from "~/components/DesignGrid";
 import { NavigationBreadcrumb } from "~/components/NavigationBreadcrumb";
 import { Pagination } from "~/components/Pagination";
-import { getCategoryBySlug, getDesignsByCategory } from "~/lib/catalogue";
+import {
+  getCategoryBySlug,
+  getDesignsByCategory,
+  getFirstImageForCategory,
+} from "~/lib/catalogue";
 
 interface PageProps {
   params: Promise<{ category: string }>;
@@ -55,6 +59,7 @@ export default function CategoryPage({ params }: PageProps) {
                   }}
                   href={`/${category.slug}/${sc.slug}`}
                   index={startIndex + index}
+                  image={getFirstImageForCategory(category.id, sc.id)}
                 />
               ))}
             </div>

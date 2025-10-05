@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import type { Category } from "~/data/types";
 
@@ -8,9 +9,15 @@ interface CategoryCardProps {
   category: Category;
   href: string;
   index?: number;
+  image?: string;
 }
 
-export function CategoryCard({ category, href, index = 0 }: CategoryCardProps) {
+export function CategoryCard({
+  category,
+  href,
+  index = 0,
+  image,
+}: CategoryCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,19 +27,31 @@ export function CategoryCard({ category, href, index = 0 }: CategoryCardProps) {
         delay: index * 0.05,
         ease: "easeOut",
       }}
+      className="h-full"
     >
-      <Link
-        href={href}
-        className="group block rounded-xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-md active:scale-[0.98]"
-      >
-        <div className="flex h-full flex-col items-center justify-center gap-4 text-center">
-          <h3 className="font-display text-primary text-2xl font-semibold">
-            {category.name}
-          </h3>
-          {category.description ? (
-            <p className="text-text/70 text-sm">{category.description}</p>
-          ) : null}
-          <div className="bg-secondary/20 h-12 w-12 shrink-0 rounded-full" />
+      <Link href={href} className="block h-full">
+        <div className="flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition hover:shadow-md active:scale-[0.98]">
+          {image && (
+            <div className="bg-background relative w-full flex-1">
+              <Image
+                src={image}
+                alt={category.name}
+                fill
+                className="object-cover"
+                sizes="33vw"
+              />
+            </div>
+          )}
+          <div className="p-4 text-center">
+            <h3 className="font-display text-primary text-lg leading-tight font-semibold">
+              {category.name}
+            </h3>
+            {category.description && (
+              <p className="text-text/70 mt-1 text-sm">
+                {category.description}
+              </p>
+            )}
+          </div>
         </div>
       </Link>
     </motion.div>
