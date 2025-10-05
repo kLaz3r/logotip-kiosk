@@ -20,7 +20,7 @@ export interface Design {
   subcategoryId?: string | null;
   name: string;
   image: string;
-  price: number;
+  pricing: Record<string, number>;
   priceRange?: { min: number; max: number };
   description?: string;
   tags?: string[];

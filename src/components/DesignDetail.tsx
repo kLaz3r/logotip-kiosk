@@ -22,9 +22,13 @@ export function DesignDetail({ design }: DesignDetailProps) {
         <h1 className="font-display text-primary text-3xl font-bold">
           {design.name}
         </h1>
-        <p className="text-primary mt-2 text-2xl font-semibold">
-          {design.price} RON
-        </p>
+        <div className="mt-2">
+          {Object.entries(design.pricing).map(([type, price]) => (
+            <p key={type} className="text-primary text-xl font-semibold">
+              {type}: {price} RON
+            </p>
+          ))}
+        </div>
         {design.description ? (
           <p className="text-text/80 mt-4">{design.description}</p>
         ) : null}
