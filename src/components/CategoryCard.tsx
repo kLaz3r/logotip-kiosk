@@ -1,0 +1,28 @@
+import Link from "next/link";
+import type { Category } from "~/data/types";
+
+interface CategoryCardProps {
+  category: Category;
+  href: string;
+}
+
+export function CategoryCard({ category, href }: CategoryCardProps) {
+  return (
+    <Link
+      href={href}
+      className="group block rounded-xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-md active:scale-[0.98]"
+    >
+      <div className="flex items-center justify-between gap-4">
+        <div>
+          <h3 className="font-display text-primary text-2xl font-semibold">
+            {category.name}
+          </h3>
+          {category.description ? (
+            <p className="text-text/70 mt-2 text-sm">{category.description}</p>
+          ) : null}
+        </div>
+        <div className="bg-secondary/20 h-12 w-12 shrink-0 rounded-full" />
+      </div>
+    </Link>
+  );
+}

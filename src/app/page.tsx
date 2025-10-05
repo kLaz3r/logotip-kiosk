@@ -1,37 +1,36 @@
+import Image from "next/image";
 import Link from "next/link";
+import { getCategories } from "~/lib/catalogue";
 
 export default function HomePage() {
+  const categories = getCategories();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
+    <main className="bg-background min-h-screen">
+      <header className="container mx-auto flex items-center justify-center gap-4 px-4 py-6">
+        <Image src="/logo.svg" alt="Logotip" width={48} height={48} />
+        <h1 className="font-display text-primary text-3xl font-bold">
+          Logotip Kiosk
         </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
+      </header>
+      <section
+        className="container mx-auto px-4 pt-4 pb-16"
+        style={{ backgroundImage: "url(/logotip-bg.svg)" }}
+      >
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {categories.map((cat) => (
+            <Link key={cat.id} href={`/${cat.slug}`} className="block">
+              <div className="rounded-xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-md active:scale-[0.98]">
+                <h2 className="font-display text-primary text-2xl font-semibold">
+                  {cat.name}
+                </h2>
+                {cat.description ? (
+                  <p className="text-text/70 mt-2 text-sm">{cat.description}</p>
+                ) : null}
+              </div>
+            </Link>
+          ))}
         </div>
-      </div>
+      </section>
     </main>
   );
 }

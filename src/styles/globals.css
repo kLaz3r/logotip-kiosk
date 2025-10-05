@@ -1,6 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+  /* Fonts */
+  --font-sans:
+    var(--font-montserrat), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: var(--font-futura-pt), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand Colors */
+  --color-text: oklch(18.22% 0.072 329.37);
+  --color-background: oklch(97.17% 0.021 328.08);
+  --color-primary: oklch(24.88% 0.087 327.81);
+  --color-secondary: oklch(74.96% 0.164 61.79);
+  --color-accent: oklch(75.76% 0.172 130.09);
+}
+
+/* Base defaults */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-background text-text font-sans antialiased;
 }

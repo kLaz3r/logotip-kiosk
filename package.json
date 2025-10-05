@@ -13,7 +13,8 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate:catalogue": "node ./scripts/generateCatalogue.mjs"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.12.0",
