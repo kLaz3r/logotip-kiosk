@@ -1,34 +1,69 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { getCategories } from "~/lib/catalogue";
+import { useState } from "react";
+import { Pagination } from "~/components/Pagination";
+import { getCategories, getFirstImageForCategory } from "~/lib/catalogue";
 
 export default function HomePage() {
   const categories = getCategories();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedCategories = categories.slice(startIndex, endIndex);
   return (
-    <main className="bg-background min-h-screen">
-      <header className="container mx-auto flex items-center justify-center gap-4 px-4 py-6">
-        <Image src="/logo.svg" alt="Logotip" width={48} height={48} />
-        <h1 className="font-display text-primary text-3xl font-bold">
-          Logotip Kiosk
-        </h1>
-      </header>
+    <main className="bg-background h-screen overflow-hidden">
       <section
-        className="container mx-auto px-4 pt-4 pb-16"
+        className="container mx-auto h-full bg-cover px-4 pt-8 pb-8"
         style={{ backgroundImage: "url(/logotip-bg.svg)" }}
       >
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((cat) => (
-            <Link key={cat.id} href={`/${cat.slug}`} className="block">
-              <div className="rounded-xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-md active:scale-[0.98]">
-                <h2 className="font-display text-primary text-2xl font-semibold">
-                  {cat.name}
-                </h2>
-                {cat.description ? (
-                  <p className="text-text/70 mt-2 text-sm">{cat.description}</p>
-                ) : null}
-              </div>
-            </Link>
-          ))}
+        <div className="flex h-full min-h-0 flex-col">
+          <div className="mb-6 flex shrink-0 items-center gap-4">
+            <h1 className="font-display text-3xl font-bold text-white">
+              Categorii de produse
+            </h1>
+          </div>
+          <div className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-4">
+            {paginatedCategories.map((cat) => {
+              const firstImage = getFirstImageForCategory(cat.id);
+              return (
+                <Link
+                  key={cat.id}
+                  href={`/${cat.slug}`}
+                  className="block h-full"
+                >
+                  <div className="flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition hover:shadow-md active:scale-[0.98]">
+                    {firstImage && (
+                      <div className="bg-background relative w-full flex-1">
+                        <Image
+                          src={firstImage}
+                          alt={cat.name}
+                          fill
+                          className="object-cover"
+                          sizes="33vw"
+                        />
+                      </div>
+                    )}
+                    <div className="p-4">
+                      <h2 className="font-display text-primary text-lg leading-tight font-semibold">
+                        {cat.name}
+                      </h2>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+          <div className="mt-auto">
+            <Pagination
+              totalItems={categories.length}
+              itemsPerPage={itemsPerPage}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+            />
+          </div>
         </div>
       </section>
     </main>

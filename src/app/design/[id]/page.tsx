@@ -1,16 +1,16 @@
 import { notFound } from "next/navigation";
+import { use } from "react";
 import { DesignDetail } from "~/components/DesignDetail";
 import { NavigationBreadcrumb } from "~/components/NavigationBreadcrumb";
-import data from "~/data/catalogue.json" assert { type: "json" };
-import type { CatalogueData } from "~/data/types";
 import { getCategories, getDesignById } from "~/lib/catalogue";
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default function DesignPage({ params }: PageProps) {
-  const design = getDesignById(params.id);
+  const { id } = use(params as unknown as Promise<{ id: string }>);
+  const design = getDesignById(id);
   if (!design) return notFound();
 
   const categories = getCategories();
@@ -20,7 +20,7 @@ export default function DesignPage({ params }: PageProps) {
   );
 
   return (
-    <main className="container mx-auto min-h-screen px-4 py-6">
+    <main className="container mx-auto h-screen overflow-hidden px-4 py-6">
       <NavigationBreadcrumb
         items={[
           { label: "Acasă", href: "/" },
@@ -29,14 +29,9 @@ export default function DesignPage({ params }: PageProps) {
             : { label: "Categorie" },
           subcategory ? { label: subcategory.name } : { label: design.name },
         ]}
+        variant="light"
       />
       <DesignDetail design={design} />
     </main>
   );
-}
-
-export function generateStaticParams() {
-  // Using static JSON import to enumerate IDs for SSG
-  const allDesigns = (data as CatalogueData).designs;
-  return allDesigns.map((d) => ({ id: d.id }));
 }

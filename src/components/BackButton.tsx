@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 
@@ -27,7 +26,7 @@ export function BackButton({
     <button
       type="button"
       onClick={handleClick}
-      className="text-primary inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium shadow-sm active:scale-[0.98]"
+      className="text-primary inline-flex items-center gap-1 rounded-full border border-black/10 bg-white px-3 py-1.5 text-sm font-medium shadow-sm active:scale-[0.98]"
     >
       <span aria-hidden>←</span>
       {label}

@@ -29,3 +29,11 @@ export function getDesignsByCategory(
 export function getDesignById(id: string): Design | undefined {
   return catalogueData.designs.find((design) => design.id === id);
 }
+
+export function getFirstImageForCategory(
+  categoryId: string,
+  subcategoryId?: string,
+): string | undefined {
+  const designs = getDesignsByCategory(categoryId, subcategoryId);
+  return designs.length > 0 ? designs[0]?.image : undefined;
+}

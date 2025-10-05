@@ -10,9 +10,9 @@ export function DesignCard({ design }: DesignCardProps) {
   return (
     <Link
       href={`/design/${design.id}`}
-      className="group overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition hover:shadow-md active:scale-[0.98]"
+      className="group flex h-full flex-col overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm transition hover:shadow-md active:scale-[0.98]"
     >
-      <div className="bg-background relative aspect-[4/3] w-full">
+      <div className="bg-background relative w-full flex-1">
         <Image
           src={design.image}
           alt={design.name}
@@ -22,17 +22,12 @@ export function DesignCard({ design }: DesignCardProps) {
           priority={design.featured}
         />
       </div>
-      <div className="p-4">
-        <div className="flex items-center justify-between">
-          <h4 className="font-display text-primary text-lg font-semibold">
-            {design.name}
-          </h4>
-          <span className="bg-secondary/20 text-primary rounded px-2 py-1 text-sm font-medium">
-            {design.price} RON
-          </span>
-        </div>
+      <div className="p-3">
+        <h4 className="font-display text-primary text-base leading-tight font-semibold">
+          {design.name}
+        </h4>
         {design.customizable ? (
-          <p className="text-text/70 mt-1 text-xs">Poate fi personalizat</p>
+          <p className="text-text/70 mt-1 text-[11px]">Poate fi personalizat</p>
         ) : null}
       </div>
     </Link>

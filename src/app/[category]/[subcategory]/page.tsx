@@ -1,54 +1,57 @@
+"use client";
+
 import { notFound } from "next/navigation";
+import { use, useState } from "react";
 import { BackButton } from "~/components/BackButton";
 import { DesignGrid } from "~/components/DesignGrid";
 import { NavigationBreadcrumb } from "~/components/NavigationBreadcrumb";
-import {
-  getCategories,
-  getCategoryBySlug,
-  getDesignsByCategory,
-} from "~/lib/catalogue";
+import { getCategoryBySlug, getDesignsByCategory } from "~/lib/catalogue";
 
 interface PageProps {
-  params: { category: string; subcategory: string };
+  params: Promise<{ category: string; subcategory: string }>;
 }
 
 export default function SubcategoryPage({ params }: PageProps) {
-  const category = getCategoryBySlug(params.category);
-  if (!category) return notFound();
-  const subcategory = category.subcategories?.find(
-    (s) => s.slug === params.subcategory,
+  const { category: categorySlug, subcategory: subcategorySlug } = use(
+    params as unknown as Promise<{ category: string; subcategory: string }>,
   );
+
+  const category = getCategoryBySlug(categorySlug);
+  const subcategory = category?.subcategories?.find(
+    (s) => s.slug === subcategorySlug,
+  );
+  const designs =
+    category && subcategory
+      ? getDesignsByCategory(category.id, subcategory.id)
+      : [];
+  const [currentPage, setCurrentPage] = useState(1);
+
+  if (!category) return notFound();
   if (!subcategory) return notFound();
 
-  const designs = getDesignsByCategory(category.id, subcategory.id);
-
   return (
-    <main className="container mx-auto min-h-screen px-4 py-6">
-      <div className="mb-3 flex items-center gap-3">
-        <BackButton />
+    <main
+      className="h-screen overflow-hidden px-4 py-6"
+      style={{ backgroundImage: "url(/logotip-bg.svg)" }}
+    >
+      <div className="container mx-auto flex h-full min-h-0 flex-col">
+        <div className="mb-6 flex shrink-0 items-center gap-4">
+          <BackButton />
+          <NavigationBreadcrumb
+            items={[
+              { label: "Acasă", href: "/" },
+              { label: category.name, href: `/${category.slug}` },
+              { label: subcategory.name },
+            ]}
+            variant="light"
+          />
+        </div>
+        <DesignGrid
+          designs={designs}
+          currentPage={currentPage}
+          onPageChange={setCurrentPage}
+        />
       </div>
-      <NavigationBreadcrumb
-        items={[
-          { label: "Acasă", href: "/" },
-          { label: category.name, href: `/${category.slug}` },
-          { label: subcategory.name },
-        ]}
-      />
-      <h1 className="font-display text-primary mb-4 text-3xl font-bold">
-        {subcategory.name}
-      </h1>
-      <DesignGrid designs={designs} />
     </main>
   );
-}
-
-export function generateStaticParams() {
-  const categories = getCategories();
-  const params: { category: string; subcategory: string }[] = [];
-  for (const c of categories) {
-    for (const s of c.subcategories ?? []) {
-      params.push({ category: c.slug, subcategory: s.slug });
-    }
-  }
-  return params;
 }
