@@ -24,7 +24,6 @@ export interface Design {
   priceRange?: { min: number; max: number };
   description?: string;
   tags?: string[];
-  customizable?: boolean;
   featured?: boolean;
   materials?: string[];
   sizes?: string[];

@@ -25,13 +25,8 @@ export function DesignDetail({ design }: DesignDetailProps) {
         <h1 className="font-display text-3xl font-bold text-white">
           {design.name}
         </h1>
-        {hasTags || design.customizable ? (
+        {hasTags ? (
           <div className="mt-3 flex flex-wrap items-center gap-2">
-            {design.customizable ? (
-              <span className="text-primary rounded-full bg-white px-3 py-1 text-xs font-medium">
-                Personalizabil
-              </span>
-            ) : null}
             {design.tags?.map((tag) => (
               <span
                 key={tag}
