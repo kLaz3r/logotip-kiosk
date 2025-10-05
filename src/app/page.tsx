@@ -16,14 +16,22 @@ export default function HomePage() {
   return (
     <main className="bg-background h-screen overflow-hidden">
       <section
-        className="container mx-auto h-full bg-cover px-4 pt-8 pb-8"
+        className="container mx-auto h-full bg-cover px-4 py-6"
         style={{ backgroundImage: "url(/logotip-bg.svg)" }}
       >
         <div className="flex h-full min-h-0 flex-col">
-          <div className="mb-6 flex shrink-0 items-center gap-4">
+          <div className="mb-6 flex shrink-0 items-center justify-between gap-4">
             <h1 className="font-display text-3xl font-bold text-white">
               Categorii de produse
             </h1>
+            <Image
+              src="/logo.svg"
+              alt="Logotip"
+              width={140}
+              height={40}
+              priority
+              className="h-10 w-auto"
+            />
           </div>
           <div className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-4">
             {paginatedCategories.map((cat) => {
