@@ -70,7 +70,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": ["Love", "Colaj"],
+      "tags": ["Dragoste", "Colaj"],
       "customizable": true,
       "featured": false
     },
@@ -86,7 +86,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": ["Grandma", "Grandpa"],
+      "tags": ["Bunică", "Bunic"],
       "customizable": true,
       "featured": false
     },
@@ -102,7 +102,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": ["SEFA"],
+      "tags": ["ȘEFĂ"],
       "customizable": true,
       "featured": false
     },
@@ -118,7 +118,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -150,7 +150,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": ["Merry Christmas", "Cats"],
+      "tags": ["Crăciun Fericit", "Pisici"],
       "customizable": true,
       "featured": false
     },
@@ -166,7 +166,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": ["Happy Holidays", "Cats"],
+      "tags": ["Sărbători Fericite", "Pisici"],
       "customizable": true,
       "featured": false
     },
@@ -182,7 +182,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": ["Christmas Joy"],
+      "tags": ["Bucuria Crăciunului"],
       "customizable": true,
       "featured": false
     },
@@ -198,7 +198,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": ["Craciun cu poza"],
+      "tags": ["Crăciun cu poză"],
       "customizable": true,
       "featured": false
     },
@@ -213,7 +213,7 @@
         "Ceas premium": 200,
         "Ceas cu rama personalizata": 250
       },
-      "tags": [],
+      "tags": ["Aniversare", "40 Ani", "Împreună"],
       "customizable": false,
       "featured": false
     },
@@ -228,7 +228,7 @@
         "Ceas premium": 200,
         "Ceas cu rama personalizata": 250
       },
-      "tags": [],
+      "tags": ["Bebeluș", "Nou-născut", "Naștere"],
       "customizable": false,
       "featured": false
     },
@@ -243,7 +243,7 @@
         "Ceas premium": 200,
         "Ceas cu rama personalizata": 250
       },
-      "tags": [],
+      "tags": ["La Mulți Ani", "Zi de Naștere", "Sărbătoare"],
       "customizable": false,
       "featured": false
     },
@@ -258,7 +258,7 @@
         "Ceas premium": 200,
         "Ceas cu rama personalizata": 250
       },
-      "tags": [],
+      "tags": ["Bunici", "Cei Mai Buni Bunici", "Familie"],
       "customizable": false,
       "featured": false
     },
@@ -273,7 +273,7 @@
         "Ceas premium": 200,
         "Ceas cu rama personalizata": 250
       },
-      "tags": [],
+      "tags": ["Dinozauri", "Copii", "Copii"],
       "customizable": false,
       "featured": false
     },
@@ -288,7 +288,7 @@
         "Ceas premium": 200,
         "Ceas cu rama personalizata": 250
       },
-      "tags": [],
+      "tags": ["Proaspăt Căsătoriți", "Nuntă", "Căsătorie"],
       "customizable": false,
       "featured": false
     },
@@ -303,7 +303,7 @@
         "Ceas premium": 200,
         "Ceas cu rama personalizata": 250
       },
-      "tags": [],
+      "tags": ["Aniversare", "2 Ani", "Piatră de hotar"],
       "customizable": false,
       "featured": false
     },
@@ -318,7 +318,7 @@
         "Ceas premium": 200,
         "Ceas cu rama personalizata": 250
       },
-      "tags": [],
+      "tags": ["Momente Fericite", "Amintiri", "Bucurie"],
       "customizable": false,
       "featured": false
     },
@@ -334,7 +334,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -349,7 +349,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -364,7 +364,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -379,7 +379,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -394,7 +394,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Majorat", "18 Ani", "Majorat"],
       "customizable": true,
       "featured": false
     },
@@ -409,7 +409,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Prieteni", "Vin", "Sărbătoare"],
       "customizable": true,
       "featured": false
     },
@@ -424,7 +424,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Șef", "Cel Mai Bun Șef", "Apreciere"],
       "customizable": true,
       "featured": false
     },
@@ -439,7 +439,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -454,7 +454,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -469,7 +469,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -484,7 +484,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -499,7 +499,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -514,7 +514,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -529,7 +529,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -544,7 +544,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Pensionare", "Felicitări", "Adio"],
       "customizable": true,
       "featured": false
     },
@@ -559,7 +559,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Profesor", "Recunoștință", "Educație"],
       "customizable": true,
       "featured": false
     },
@@ -574,7 +574,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Profesor", "Cel Mai Bun Profesor", "Educație"],
       "customizable": true,
       "featured": false
     },
@@ -590,7 +590,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -606,7 +606,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -622,7 +622,7 @@
         "Sort copii": 60,
         "Sort adulti": 90
       },
-      "tags": [],
+      "tags": ["Bebeluș", "Bucătar", "Bucătărie"],
       "customizable": true,
       "featured": false
     },
@@ -638,7 +638,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -654,7 +654,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -670,7 +670,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -686,7 +686,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -702,7 +702,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -718,7 +718,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -734,7 +734,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -750,7 +750,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -766,7 +766,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -782,7 +782,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -798,7 +798,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -814,7 +814,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -830,7 +830,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -846,7 +846,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -862,7 +862,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -878,7 +878,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -894,7 +894,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -910,7 +910,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -926,7 +926,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -942,7 +942,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -958,7 +958,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -974,7 +974,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -990,7 +990,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1006,7 +1006,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1022,7 +1022,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1038,7 +1038,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1054,7 +1054,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1070,7 +1070,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1086,7 +1086,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1102,7 +1102,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1118,7 +1118,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1134,7 +1134,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1150,7 +1150,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1166,7 +1166,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1182,7 +1182,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1198,7 +1198,7 @@
         "Sort copii": 60,
         "Sort adulti": 90
       },
-      "tags": [],
+      "tags": ["Tată", "Fiu", "Bucătar"],
       "customizable": true,
       "featured": false
     },
@@ -1214,7 +1214,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1230,7 +1230,7 @@
         "Sort copii": 60,
         "Sort adulti": 90
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1246,7 +1246,7 @@
         "Sort copii": 60,
         "Sort adulti": 90
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1262,7 +1262,7 @@
         "Sort copii": 60,
         "Sort adulti": 90
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1278,7 +1278,7 @@
         "Sort copii": 60,
         "Sort adulti": 90
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1294,7 +1294,7 @@
         "Sort copii": 60,
         "Sort adulti": 90
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1310,7 +1310,7 @@
         "Sort copii": 60,
         "Sort adulti": 90
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1326,7 +1326,7 @@
         "Sort copii": 60,
         "Sort adulti": 90
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1342,7 +1342,7 @@
         "Sort copii": 60,
         "Sort adulti": 90
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1358,7 +1358,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Frumoasă", "Nebună", "Amuzant"],
       "customizable": true,
       "featured": false
     },
@@ -1374,7 +1374,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Cuplu", "Iubire", "Inimă"],
       "customizable": true,
       "featured": false
     },
@@ -1390,7 +1390,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Tată", "Tată", "Promovare"],
       "customizable": true,
       "featured": false
     },
@@ -1406,7 +1406,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["18 Ani", "Divă", "Zi de Naștere"],
       "customizable": true,
       "featured": false
     },
@@ -1422,7 +1422,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1438,7 +1438,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1454,7 +1454,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1470,7 +1470,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1486,7 +1486,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1502,7 +1502,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1518,7 +1518,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1534,7 +1534,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1550,7 +1550,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1566,7 +1566,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1582,7 +1582,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1598,7 +1598,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1614,7 +1614,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1630,7 +1630,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1646,7 +1646,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1662,7 +1662,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1678,7 +1678,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1694,7 +1694,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1710,7 +1710,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1726,7 +1726,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1742,7 +1742,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1758,7 +1758,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1774,7 +1774,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1790,7 +1790,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1806,7 +1806,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1822,7 +1822,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1838,7 +1838,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1854,7 +1854,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1870,7 +1870,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1886,7 +1886,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1902,7 +1902,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1918,7 +1918,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1934,7 +1934,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1950,7 +1950,7 @@
         "Tricou adulti L/XL": 95,
         "Tricou adulti XXL+": 105
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1965,7 +1965,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1980,7 +1980,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -1995,7 +1995,7 @@
         "Cutie vin premium": 150,
         "Eticheta personalizata": 25
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     },
@@ -2011,7 +2011,7 @@
         "Cana Termosensibila": 45,
         "Cutie Cadou": 5
       },
-      "tags": [],
+      "tags": ["Bucătărie", "Gătit", "Personalizat"],
       "customizable": true,
       "featured": false
     }
