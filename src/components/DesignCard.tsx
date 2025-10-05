@@ -22,8 +22,8 @@ export function DesignCard({ design }: DesignCardProps) {
           priority={design.featured}
         />
       </div>
-      <div className="p-3">
-        <h4 className="font-display text-primary text-base leading-tight font-semibold">
+      <div className="p-3 text-center">
+        <h4 className="font-display text-primary text-lg leading-tight font-semibold">
           {design.name}
         </h4>
       </div>

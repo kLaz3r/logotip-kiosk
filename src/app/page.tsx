@@ -54,7 +54,7 @@ export default function HomePage() {
                         />
                       </div>
                     )}
-                    <div className="p-4">
+                    <div className="p-4 text-center">
                       <h2 className="font-display text-primary text-lg leading-tight font-semibold">
                         {cat.name}
                       </h2>

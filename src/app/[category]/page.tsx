@@ -74,8 +74,8 @@ export default function CategoryPage({ params }: PageProps) {
                           />
                         </div>
                       )}
-                      <div className="p-3">
-                        <h2 className="text-primary text-base leading-tight font-semibold">
+                      <div className="p-3 text-center">
+                        <h2 className="font-display text-primary text-lg leading-tight font-semibold">
                           {sc.name}
                         </h2>
                       </div>
