@@ -33,7 +33,7 @@ export default function HomePage() {
               className="h-10 w-auto"
             />
           </div>
-          <div className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-4">
+          <div className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3">
             {paginatedCategories.map((cat) => {
               const firstImage = getFirstImageForCategory(cat.id);
               return (
