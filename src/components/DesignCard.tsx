@@ -1,35 +1,21 @@
 "use client";
 
-import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Design } from "~/data/types";
 
 interface DesignCardProps {
   design: Design;
-  index?: number;
   currentPage?: number;
 }
 
-export function DesignCard({
-  design,
-  index = 0,
-  currentPage,
-}: DesignCardProps) {
+export function DesignCard({ design, currentPage }: DesignCardProps) {
   const href = currentPage
     ? `/design/${design.id}?fromPage=${currentPage}`
     : `/design/${design.id}`;
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        duration: 0.1,
-        delay: index * 0.05,
-        ease: "easeOut",
-      }}
-    >
+    <div>
       <Link
         href={href}
         className="group flex h-full flex-col overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm transition hover:shadow-md active:scale-[0.98]"
@@ -50,6 +36,6 @@ export function DesignCard({
           </h4>
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 }

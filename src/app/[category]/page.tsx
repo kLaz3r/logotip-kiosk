@@ -63,7 +63,7 @@ export default function CategoryPage({ params }: PageProps) {
         {hasSubcategories ? (
           <>
             <div className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3">
-              {paginatedSubcategories.map((sc, index) => (
+              {paginatedSubcategories.map((sc) => (
                 <CategoryCard
                   key={sc.id}
                   category={{
@@ -73,7 +73,6 @@ export default function CategoryPage({ params }: PageProps) {
                     description: sc.description,
                   }}
                   href={`/${category.slug}/${sc.slug}`}
-                  index={startIndex + index}
                   image={getFirstImageForCategory(category.id, sc.id)}
                 />
               ))}

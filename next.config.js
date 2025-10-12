@@ -203,15 +203,6 @@ const config = {
       },
     ];
   },
-
-  turbopack: {
-    rules: {
-      "*.json": {
-        loaders: ["json-loader"],
-        as: "*.js",
-      },
-    },
-  },
 };
 
 export default withPWA(config);
