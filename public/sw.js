@@ -26,22 +26,55 @@ const STATIC_ASSETS = [
   "/fonts/FuturaPT-HeavyObl.ttf",
 ];
 
-// Install event - cache static assets
+// Pages to cache for offline use
+const PAGES_TO_CACHE = [
+  "/",
+  "/mugs",
+  "/ceasuri",
+  "/cutii-etichete-vin",
+  "/tocatoare-si-sorturi",
+  "/tricouri",
+  "/tricouri/aniversari",
+  "/tricouri/burlaci-burlacite",
+  "/tricouri/cupluri",
+  "/tricouri/mamici-tatici",
+  "/tricouri/mesaje-amuzante",
+];
+
+// Install event - cache static assets and pages
 self.addEventListener("install", (event) => {
   console.log("Service Worker installing...");
   event.waitUntil(
-    caches
-      .open(STATIC_CACHE_NAME)
-      .then((cache) => {
+    Promise.all([
+      // Cache static assets
+      caches.open(STATIC_CACHE_NAME).then((cache) => {
         console.log("Caching static assets");
         return cache.addAll(STATIC_ASSETS);
-      })
+      }),
+      // Cache pages for offline use
+      caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
+        console.log("Caching pages for offline use");
+        return Promise.all(
+          PAGES_TO_CACHE.map((page) => {
+            return fetch(page)
+              .then((response) => {
+                if (response.ok) {
+                  return cache.put(page, response);
+                }
+              })
+              .catch((error) => {
+                console.log(`Failed to cache page ${page}:`, error);
+              });
+          }),
+        );
+      }),
+    ])
       .then(() => {
-        console.log("Static assets cached successfully");
+        console.log("Assets and pages cached successfully");
         return self.skipWaiting();
       })
       .catch((error) => {
-        console.error("Failed to cache static assets:", error);
+        console.error("Failed to cache assets:", error);
       }),
   );
 });
@@ -94,7 +127,33 @@ self.addEventListener("fetch", (event) => {
         return cachedResponse;
       }
 
-      // Otherwise fetch from network
+      // For navigation requests, try to serve from cache first
+      if (request.mode === "navigate") {
+        return caches.match(request.url).then((cachedPage) => {
+          if (cachedPage) {
+            return cachedPage;
+          }
+
+          // If not cached, fetch from network
+          return fetch(request)
+            .then((response) => {
+              if (response.ok) {
+                // Cache the page for future offline use
+                const responseToCache = response.clone();
+                caches.open(DYNAMIC_CACHE_NAME).then((cache) => {
+                  cache.put(request, responseToCache);
+                });
+              }
+              return response;
+            })
+            .catch(() => {
+              // Return offline fallback for navigation requests
+              return caches.match("/offline");
+            });
+        });
+      }
+
+      // For other requests, fetch from network
       return fetch(request)
         .then((response) => {
           // Don't cache non-successful responses
@@ -119,12 +178,7 @@ self.addEventListener("fetch", (event) => {
           return response;
         })
         .catch(() => {
-          // Return offline fallback for navigation requests
-          if (request.mode === "navigate") {
-            return caches.match("/offline");
-          }
-
-          // For other requests, return a basic offline response
+          // For non-navigation requests, return a basic offline response
           return new Response("Offline", {
             status: 503,
             statusText: "Service Unavailable",
@@ -140,6 +194,11 @@ self.addEventListener("fetch", (event) => {
 // Helper function to determine if a request should be cached
 function shouldCache(request) {
   const url = new URL(request.url);
+
+  // Cache all pages (navigation requests)
+  if (request.mode === "navigate") {
+    return true;
+  }
 
   // Cache images
   if (url.pathname.match(/\.(jpg|jpeg|png|gif|webp|svg|ico)$/)) {
@@ -166,6 +225,11 @@ function shouldCache(request) {
     return true;
   }
 
+  // Cache all assets from the assets directory
+  if (url.pathname.startsWith("/assets/")) {
+    return true;
+  }
+
   return false;
 }
 
@@ -180,6 +244,70 @@ self.addEventListener("sync", (event) => {
     );
   }
 });
+
+// Background cache warming - cache all pages and assets when online
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "CACHE_ALL") {
+    event.waitUntil(cacheAllPagesAndAssets());
+  }
+});
+
+// Function to cache all pages and assets
+async function cacheAllPagesAndAssets() {
+  try {
+    const cache = await caches.open(DYNAMIC_CACHE_NAME);
+
+    // Cache all pages
+    for (const page of PAGES_TO_CACHE) {
+      try {
+        const response = await fetch(page);
+        if (response.ok) {
+          await cache.put(page, response);
+          console.log(`Cached page: ${page}`);
+        }
+      } catch (error) {
+        console.log(`Failed to cache page ${page}:`, error);
+      }
+    }
+
+    // Cache all images from assets directory
+    const assetPaths = [
+      // Mugs
+      "/assets/mugs/mug 1.jpg",
+      "/assets/mugs/mug 2.jpg",
+      "/assets/mugs/mug 3.jpg",
+      // Ceasuri
+      "/assets/ceasuri/ceas 1.jpg",
+      "/assets/ceasuri/ceas 2.jpg",
+      "/assets/ceasuri/ceas 3.jpg",
+      // Cutii etichete vin
+      "/assets/cutii-etichete-vin/Cutie vin.jpg",
+      "/assets/cutii-etichete-vin/CV aniversare.jpg",
+      // Tocatoare si sorturi
+      "/assets/tocatoare-si-sorturi/Tocator 1.jpg",
+      "/assets/tocatoare-si-sorturi/Tocator 2.jpg",
+      // Tricouri
+      "/assets/tricouri/tricouri-aniversari/tricou 1.jpg",
+      "/assets/tricouri/tricouri-aniversari/tricou 2.jpg",
+    ];
+
+    for (const assetPath of assetPaths) {
+      try {
+        const response = await fetch(assetPath);
+        if (response.ok) {
+          await cache.put(assetPath, response);
+          console.log(`Cached asset: ${assetPath}`);
+        }
+      } catch (error) {
+        console.log(`Failed to cache asset ${assetPath}:`, error);
+      }
+    }
+
+    console.log("Background caching completed");
+  } catch (error) {
+    console.error("Background caching failed:", error);
+  }
+}
 
 // Handle push notifications (if needed in the future)
 self.addEventListener("push", (event) => {

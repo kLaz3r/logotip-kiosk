@@ -127,6 +127,11 @@ export function KioskMode({ children }: KioskModeProps) {
               });
             }
           });
+
+          // Trigger background caching when online
+          if (navigator.onLine && registration.active) {
+            registration.active.postMessage({ type: "CACHE_ALL" });
+          }
         } catch (error) {
           console.error("Service Worker registration failed:", error);
         }
