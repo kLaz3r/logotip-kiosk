@@ -1,7 +1,7 @@
 "use client";
 
-import { notFound } from "next/navigation";
-import { use, useState } from "react";
+import { notFound, useRouter, useSearchParams } from "next/navigation";
+import { use, useEffect, useState } from "react";
 import { BackButton } from "~/components/BackButton";
 import { CategoryCard } from "~/components/CategoryCard";
 import { DesignGrid } from "~/components/DesignGrid";
@@ -22,7 +22,22 @@ export default function CategoryPage({ params }: PageProps) {
     params as unknown as Promise<{ category: string }>,
   );
   const category = getCategoryBySlug(categorySlug);
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
+
+  // Restore pagination state from URL params and clean up URL
+  useEffect(() => {
+    const fromPage = searchParams.get("fromPage");
+    if (fromPage) {
+      const pageNumber = parseInt(fromPage, 10);
+      if (pageNumber > 0) {
+        setCurrentPage(pageNumber);
+        // Replace the URL to remove the fromPage parameter
+        router.replace(`/${categorySlug}`);
+      }
+    }
+  }, [searchParams, router, categorySlug]);
 
   if (!category) return notFound();
 
@@ -39,7 +54,7 @@ export default function CategoryPage({ params }: PageProps) {
     <main className="h-screen overflow-hidden px-4 py-6">
       <div className="container mx-auto flex h-full min-h-0 flex-col">
         <div className="mb-6 flex shrink-0 items-center gap-4">
-          <BackButton />
+          <BackButton returnTo="/" />
           <NavigationBreadcrumb
             items={[{ label: "Acasă", href: "/" }, { label: category.name }]}
             variant="light"

@@ -8,9 +8,18 @@ import type { Design } from "~/data/types";
 interface DesignCardProps {
   design: Design;
   index?: number;
+  currentPage?: number;
 }
 
-export function DesignCard({ design, index = 0 }: DesignCardProps) {
+export function DesignCard({
+  design,
+  index = 0,
+  currentPage,
+}: DesignCardProps) {
+  const href = currentPage
+    ? `/design/${design.id}?fromPage=${currentPage}`
+    : `/design/${design.id}`;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -22,7 +31,7 @@ export function DesignCard({ design, index = 0 }: DesignCardProps) {
       }}
     >
       <Link
-        href={`/design/${design.id}`}
+        href={href}
         className="group flex h-full flex-col overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm transition hover:shadow-md active:scale-[0.98]"
       >
         <div className="bg-background relative w-full flex-1">

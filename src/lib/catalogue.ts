@@ -3,6 +3,10 @@ import type { CatalogueData, Category, Design } from "~/data/types";
 
 const catalogueData = data as unknown as CatalogueData;
 
+if (!catalogueData?.categories || !catalogueData?.designs) {
+  throw new Error("Invalid catalogue data");
+}
+
 export function getCategories(): Category[] {
   return catalogueData.categories;
 }

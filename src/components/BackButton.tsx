@@ -6,21 +6,25 @@ import { useCallback } from "react";
 interface BackButtonProps {
   fallbackHref?: string;
   label?: string;
+  returnTo?: string;
 }
 
 export function BackButton({
   fallbackHref = "/",
   label = "Înapoi",
+  returnTo,
 }: BackButtonProps) {
   const router = useRouter();
 
   const handleClick = useCallback(() => {
-    if (typeof window !== "undefined" && window.history.length > 1) {
+    if (returnTo) {
+      router.replace(returnTo);
+    } else if (typeof window !== "undefined" && window.history.length > 1) {
       router.back();
     } else {
       router.push(fallbackHref);
     }
-  }, [router, fallbackHref]);
+  }, [router, fallbackHref, returnTo]);
 
   return (
     <button
