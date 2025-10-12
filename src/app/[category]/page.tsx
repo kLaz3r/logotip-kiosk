@@ -7,6 +7,7 @@ import { CategoryCard } from "~/components/CategoryCard";
 import { DesignGrid } from "~/components/DesignGrid";
 import { NavigationBreadcrumb } from "~/components/NavigationBreadcrumb";
 import { Pagination } from "~/components/Pagination";
+import { useSwipeGesture } from "~/hooks/useSwipeGesture";
 import {
   getCategoryBySlug,
   getDesignsByCategory,
@@ -49,6 +50,22 @@ export default function CategoryPage({ params }: PageProps) {
   const paginatedSubcategories = hasSubcategories
     ? subcategories.slice(startIndex, startIndex + itemsPerPage)
     : [];
+
+  const totalItems = hasSubcategories ? subcategories.length : designs.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  useSwipeGesture({
+    onSwipeLeft: () => {
+      if (currentPage < totalPages) {
+        setCurrentPage(currentPage + 1);
+      }
+    },
+    onSwipeRight: () => {
+      if (currentPage > 1) {
+        setCurrentPage(currentPage - 1);
+      }
+    },
+  });
 
   return (
     <main className="h-screen overflow-hidden px-4 py-6">

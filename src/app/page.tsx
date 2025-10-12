@@ -4,15 +4,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Pagination } from "~/components/Pagination";
+import { useSwipeGesture } from "~/hooks/useSwipeGesture";
 import { getCategories, getFirstImageForCategory } from "~/lib/catalogue";
 
 export default function HomePage() {
   const categories = getCategories();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+  const totalPages = Math.ceil(categories.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const paginatedCategories = categories.slice(startIndex, endIndex);
+
+  useSwipeGesture({
+    onSwipeLeft: () => {
+      if (currentPage < totalPages) {
+        setCurrentPage(currentPage + 1);
+      }
+    },
+    onSwipeRight: () => {
+      if (currentPage > 1) {
+        setCurrentPage(currentPage - 1);
+      }
+    },
+  });
   return (
     <main className="h-screen overflow-hidden">
       <section className="container mx-auto h-full bg-cover px-4 py-6">

@@ -5,6 +5,7 @@ import { use, useEffect, useState } from "react";
 import { BackButton } from "~/components/BackButton";
 import { DesignGrid } from "~/components/DesignGrid";
 import { NavigationBreadcrumb } from "~/components/NavigationBreadcrumb";
+import { useSwipeGesture } from "~/hooks/useSwipeGesture";
 import { getCategoryBySlug, getDesignsByCategory } from "~/lib/catalogue";
 
 interface PageProps {
@@ -43,6 +44,22 @@ export default function SubcategoryPage({ params }: PageProps) {
 
   if (!category) return notFound();
   if (!subcategory) return notFound();
+
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(designs.length / itemsPerPage);
+
+  useSwipeGesture({
+    onSwipeLeft: () => {
+      if (currentPage < totalPages) {
+        setCurrentPage(currentPage + 1);
+      }
+    },
+    onSwipeRight: () => {
+      if (currentPage > 1) {
+        setCurrentPage(currentPage - 1);
+      }
+    },
+  });
 
   return (
     <main className="h-screen overflow-hidden px-4 py-6">
