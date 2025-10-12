@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline - Logotip Kiosk</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+          "Ubuntu", "Cantarell", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 600px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .offline-icon {
+        font-size: 8rem;
+        margin-bottom: 2rem;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.7;
+        }
+      }
+
+      .retry-button {
+        background: white;
+        color: #667eea;
+        border: none;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: transform 0.2s;
+      }
+
+      .retry-button:hover {
+        transform: translateY(-2px);
+      }
+
+      .retry-button:active {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="offline-icon">📡</div>
+      <h1>Offline</h1>
+      <p>
+        You're currently offline. The requested content is not available in the
+        cache.
+      </p>
+      <button class="retry-button" onclick="location.reload()">
+        Retry Connection
+      </button>
+    </div>
+
+    <script>
+      // Auto-retry when connection is restored
+      window.addEventListener("online", () => {
+        location.reload();
+      });
+    </script>
+  </body>
+</html>
