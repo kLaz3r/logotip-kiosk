@@ -40,12 +40,12 @@ export default function CategoryPage({ params }: PageProps) {
     }
   }, [searchParams, router, categorySlug]);
 
-  if (!category) return notFound();
-
-  const hasSubcategories = Boolean(category.subcategories?.length);
-  const designs = hasSubcategories ? [] : getDesignsByCategory(category.id);
+  const hasSubcategories = Boolean(category?.subcategories?.length);
+  const designs = hasSubcategories
+    ? []
+    : getDesignsByCategory(category?.id ?? "");
   const itemsPerPage = 6;
-  const subcategories = category.subcategories ?? [];
+  const subcategories = category?.subcategories ?? [];
   const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedSubcategories = hasSubcategories
     ? subcategories.slice(startIndex, startIndex + itemsPerPage)
@@ -66,6 +66,8 @@ export default function CategoryPage({ params }: PageProps) {
       }
     },
   });
+
+  if (!category) return notFound();
 
   const transformStyle = {
     transform: `translateX(${swipeState.offset}px)`,

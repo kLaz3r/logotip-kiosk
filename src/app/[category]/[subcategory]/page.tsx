@@ -42,9 +42,6 @@ export default function SubcategoryPage({ params }: PageProps) {
     }
   }, [searchParams, router, categorySlug, subcategorySlug]);
 
-  if (!category) return notFound();
-  if (!subcategory) return notFound();
-
   const itemsPerPage = 6;
   const totalPages = Math.ceil(designs.length / itemsPerPage);
 
@@ -60,6 +57,9 @@ export default function SubcategoryPage({ params }: PageProps) {
       }
     },
   });
+
+  if (!category) return notFound();
+  if (!subcategory) return notFound();
 
   const transformStyle = {
     transform: `translateX(${swipeState.offset}px)`,
