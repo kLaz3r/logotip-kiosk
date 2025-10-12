@@ -16,7 +16,7 @@ export default function HomePage() {
   const endIndex = startIndex + itemsPerPage;
   const paginatedCategories = categories.slice(startIndex, endIndex);
 
-  useSwipeGesture({
+  const swipeState = useSwipeGesture({
     onSwipeLeft: () => {
       if (currentPage < totalPages) {
         setCurrentPage(currentPage + 1);
@@ -28,6 +28,14 @@ export default function HomePage() {
       }
     },
   });
+
+  const transformStyle = {
+    transform: `translateX(${swipeState.offset}px)`,
+    transition: swipeState.isTransitioning
+      ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      : "none",
+  };
+
   return (
     <main className="h-screen overflow-hidden">
       <section className="container mx-auto h-full bg-cover px-4 py-6">
@@ -45,7 +53,10 @@ export default function HomePage() {
               className="h-10 w-auto"
             />
           </div>
-          <div className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3">
+          <div
+            className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3"
+            style={transformStyle}
+          >
             {paginatedCategories.map((cat) => {
               const firstImage = getFirstImageForCategory(cat.id);
               return (

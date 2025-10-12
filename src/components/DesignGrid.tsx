@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { DesignCard } from "~/components/DesignCard";
 import { Pagination } from "~/components/Pagination";
 import type { Design } from "~/data/types";
@@ -7,6 +8,7 @@ interface DesignGridProps {
   currentPage?: number;
   onPageChange?: (page: number) => void;
   itemsPerPage?: number;
+  transformStyle?: CSSProperties;
 }
 
 export function DesignGrid({
@@ -14,6 +16,7 @@ export function DesignGrid({
   currentPage = 1,
   onPageChange,
   itemsPerPage = 6,
+  transformStyle,
 }: DesignGridProps) {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -21,7 +24,10 @@ export function DesignGrid({
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      <div className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3">
+      <div
+        className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3"
+        style={transformStyle}
+      >
         {paginatedDesigns.map((d) => (
           <DesignCard key={d.id} design={d} currentPage={currentPage} />
         ))}

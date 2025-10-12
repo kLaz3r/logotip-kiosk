@@ -48,7 +48,7 @@ export default function SubcategoryPage({ params }: PageProps) {
   const itemsPerPage = 6;
   const totalPages = Math.ceil(designs.length / itemsPerPage);
 
-  useSwipeGesture({
+  const swipeState = useSwipeGesture({
     onSwipeLeft: () => {
       if (currentPage < totalPages) {
         setCurrentPage(currentPage + 1);
@@ -60,6 +60,13 @@ export default function SubcategoryPage({ params }: PageProps) {
       }
     },
   });
+
+  const transformStyle = {
+    transform: `translateX(${swipeState.offset}px)`,
+    transition: swipeState.isTransitioning
+      ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      : "none",
+  };
 
   return (
     <main className="h-screen overflow-hidden px-4 py-6">
@@ -79,6 +86,7 @@ export default function SubcategoryPage({ params }: PageProps) {
           designs={designs}
           currentPage={currentPage}
           onPageChange={setCurrentPage}
+          transformStyle={transformStyle}
         />
       </div>
     </main>

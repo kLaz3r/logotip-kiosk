@@ -54,7 +54,7 @@ export default function CategoryPage({ params }: PageProps) {
   const totalItems = hasSubcategories ? subcategories.length : designs.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  useSwipeGesture({
+  const swipeState = useSwipeGesture({
     onSwipeLeft: () => {
       if (currentPage < totalPages) {
         setCurrentPage(currentPage + 1);
@@ -66,6 +66,13 @@ export default function CategoryPage({ params }: PageProps) {
       }
     },
   });
+
+  const transformStyle = {
+    transform: `translateX(${swipeState.offset}px)`,
+    transition: swipeState.isTransitioning
+      ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      : "none",
+  };
 
   return (
     <main className="h-screen overflow-hidden px-4 py-6">
@@ -79,7 +86,10 @@ export default function CategoryPage({ params }: PageProps) {
         </div>
         {hasSubcategories ? (
           <>
-            <div className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3">
+            <div
+              className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3"
+              style={transformStyle}
+            >
               {paginatedSubcategories.map((sc) => (
                 <CategoryCard
                   key={sc.id}
@@ -108,6 +118,7 @@ export default function CategoryPage({ params }: PageProps) {
             designs={designs}
             currentPage={currentPage}
             onPageChange={setCurrentPage}
+            transformStyle={transformStyle}
           />
         )}
       </div>
