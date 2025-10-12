@@ -1,4 +1,4 @@
-import data from "~/data/catalogue.json" assert { type: "json" };
+import data from "~/data/catalogue.json";
 import type { CatalogueData, Category, Design } from "~/data/types";
 
 const catalogueData = data as unknown as CatalogueData;
@@ -28,6 +28,10 @@ export function getDesignsByCategory(
 
 export function getDesignById(id: string): Design | undefined {
   return catalogueData.designs.find((design) => design.id === id);
+}
+
+export function getDesigns(): Design[] {
+  return catalogueData.designs;
 }
 
 export function getFirstImageForCategory(

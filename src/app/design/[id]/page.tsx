@@ -1,12 +1,57 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { use } from "react";
 import { BackButton } from "~/components/BackButton";
 import { DesignDetail } from "~/components/DesignDetail";
 import { NavigationBreadcrumb } from "~/components/NavigationBreadcrumb";
-import { getCategories, getDesignById } from "~/lib/catalogue";
+import type { Design } from "~/data/types";
+import { getCategories, getDesignById, getDesigns } from "~/lib/catalogue";
 
 interface PageProps {
   params: Promise<{ id: string }>;
+}
+
+// Generate static params for all design pages
+export async function generateStaticParams() {
+  const designs = getDesigns();
+
+  return designs.map((design: Design) => ({
+    id: design.id,
+  }));
+}
+
+// Generate metadata for each design page
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const design = getDesignById(id);
+
+  if (!design) {
+    return {
+      title: "Design Not Found",
+    };
+  }
+
+  const categories = getCategories();
+  const category = categories.find((c) => c.id === design.categoryId);
+
+  return {
+    title: `${design.name} - ${category?.name ?? "Design"}`,
+    description: `Personalizat ${design.name} - ${category?.name ?? "design personalizat"}. ${design.tags?.join(", ") ?? ""}`,
+    openGraph: {
+      title: `${design.name} - ${category?.name ?? "Design"}`,
+      description: `Personalizat ${design.name} - ${category?.name ?? "design personalizat"}. ${design.tags?.join(", ") ?? ""}`,
+      images: [
+        {
+          url: design.image,
+          width: 800,
+          height: 600,
+          alt: design.name,
+        },
+      ],
+    },
+  };
 }
 
 export default function DesignPage({ params }: PageProps) {

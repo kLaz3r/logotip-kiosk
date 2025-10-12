@@ -7,6 +7,9 @@ import { IdleRedirect } from "~/components/IdleRedirect";
 import { PWAHandler } from "~/components/PWAHandler";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000",
+  ),
   title: "Logotip Kiosk",
   description: "Kiosk for local print shop",
   icons: [
