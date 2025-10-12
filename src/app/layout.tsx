@@ -1,7 +1,6 @@
 import "~/styles/globals.css";
 
 import { type Metadata, type Viewport } from "next";
-import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import { AnimatedLayout } from "~/components/AnimatedLayout";
 import { IdleRedirect } from "~/components/IdleRedirect";
@@ -103,17 +102,11 @@ const futuraPt = localFont({
   display: "swap",
 });
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: "swap",
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ro" className={`${futuraPt.variable} ${montserrat.variable}`}>
+    <html lang="ro" className={futuraPt.variable}>
       <head>
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
