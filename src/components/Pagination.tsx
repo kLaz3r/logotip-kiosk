@@ -1,5 +1,7 @@
 "use client";
 
+import { memo, useCallback, useMemo } from "react";
+
 interface PaginationProps {
   totalItems: number;
   itemsPerPage: number;
@@ -7,17 +9,20 @@ interface PaginationProps {
   currentPage: number;
 }
 
-export function Pagination({
+export const Pagination = memo(function Pagination({
   totalItems,
   itemsPerPage,
   onPageChange,
   currentPage,
 }: PaginationProps) {
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const totalPages = useMemo(
+    () => Math.ceil(totalItems / itemsPerPage),
+    [totalItems, itemsPerPage],
+  );
 
-  if (totalPages <= 1) return null;
+  const visiblePages = useMemo(() => {
+    if (totalPages <= 1) return [];
 
-  const getVisiblePages = () => {
     const pages = [];
     const maxVisible = 5;
 
@@ -48,12 +53,22 @@ export function Pagination({
     }
 
     return pages;
-  };
+  }, [totalPages, currentPage]);
+
+  const handlePrevious = useCallback(() => {
+    onPageChange(currentPage - 1);
+  }, [onPageChange, currentPage]);
+
+  const handleNext = useCallback(() => {
+    onPageChange(currentPage + 1);
+  }, [onPageChange, currentPage]);
+
+  if (totalPages <= 1) return null;
 
   return (
     <div className="mt-4 flex items-center justify-center gap-2">
       <button
-        onClick={() => onPageChange(currentPage - 1)}
+        onClick={handlePrevious}
         disabled={currentPage === 1}
         className="text-primary hover:bg-primary/5 rounded-md border border-black/10 bg-white px-3 py-1.5 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
       >
@@ -61,7 +76,7 @@ export function Pagination({
       </button>
 
       <div className="flex items-center gap-1">
-        {getVisiblePages().map((page) => (
+        {visiblePages.map((page) => (
           <button
             key={page}
             onClick={() => onPageChange(page)}
@@ -77,7 +92,7 @@ export function Pagination({
       </div>
 
       <button
-        onClick={() => onPageChange(currentPage + 1)}
+        onClick={handleNext}
         disabled={currentPage === totalPages}
         className="text-primary hover:bg-primary/5 rounded-md border border-black/10 bg-white px-3 py-1.5 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
       >
@@ -85,4 +100,4 @@ export function Pagination({
       </button>
     </div>
   );
-}
+});

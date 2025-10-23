@@ -38,3 +38,27 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+/* Performance optimizations: CSS containment for better paint performance */
+.container {
+  contain: layout style;
+}
+
+/* Optimize grid rendering */
+[class*="grid"] {
+  contain: layout style;
+  will-change: auto;
+}
+
+/* Optimize cards for better repainting */
+[class*="rounded-xl"],
+[class*="rounded-lg"] {
+  contain: layout paint;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Optimize image containers */
+[class*="relative"][class*="flex-1"] {
+  contain: strict;
+  content-visibility: auto;
+}

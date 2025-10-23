@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useCallback } from "react";
+import { memo, useCallback } from "react";
 
 interface BackButtonProps {
   fallbackHref?: string;
@@ -9,7 +9,7 @@ interface BackButtonProps {
   returnTo?: string;
 }
 
-export function BackButton({
+export const BackButton = memo(function BackButton({
   fallbackHref = "/",
   label = "Înapoi",
   returnTo,
@@ -36,4 +36,4 @@ export function BackButton({
       {label}
     </button>
   );
-}
+});

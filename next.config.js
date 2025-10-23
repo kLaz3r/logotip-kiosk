@@ -157,10 +157,26 @@ const config = {
     minimumCacheTTL: 31536000, // 1 year
   },
 
-  // Asset optimization
+  // Asset optimization and performance improvements
   experimental: {
     optimizePackageImports: ["motion"],
+    // Enable CSS optimization with critters
+    optimizeCss: true,
   },
+
+  // Compiler optimizations
+  compiler: {
+    // Remove console logs in production
+    removeConsole:
+      process.env.NODE_ENV === "production"
+        ? {
+            exclude: ["error", "warn"],
+          }
+        : false,
+  },
+
+  // Additional performance optimizations
+  swcMinify: true,
 
   // Headers for PWA and caching
   async headers() {

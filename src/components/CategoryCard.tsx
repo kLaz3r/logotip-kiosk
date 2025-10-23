@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { memo } from "react";
 import type { Category } from "~/data/types";
 
 interface CategoryCardProps {
@@ -10,7 +11,11 @@ interface CategoryCardProps {
   image?: string;
 }
 
-export function CategoryCard({ category, href, image }: CategoryCardProps) {
+export const CategoryCard = memo(function CategoryCard({
+  category,
+  href,
+  image,
+}: CategoryCardProps) {
   return (
     <div className="h-full">
       <Link href={href} className="block h-full">
@@ -23,6 +28,7 @@ export function CategoryCard({ category, href, image }: CategoryCardProps) {
                 fill
                 className="object-cover"
                 sizes="33vw"
+                loading="lazy"
               />
             </div>
           )}
@@ -40,4 +46,4 @@ export function CategoryCard({ category, href, image }: CategoryCardProps) {
       </Link>
     </div>
   );
-}
+});

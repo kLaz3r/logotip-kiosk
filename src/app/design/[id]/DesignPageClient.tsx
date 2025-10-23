@@ -1,6 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { useCallback, useMemo } from "react";
 import { BackButton } from "~/components/BackButton";
 import { DesignDetail } from "~/components/DesignDetail";
 import { NavigationBreadcrumb } from "~/components/NavigationBreadcrumb";
@@ -14,14 +15,18 @@ interface DesignPageClientProps {
 export function DesignPageClient({ design }: DesignPageClientProps) {
   const searchParams = useSearchParams();
 
-  const categories = getCategories();
-  const category = categories.find((c) => c.id === design.categoryId);
-  const subcategory = category?.subcategories?.find(
-    (s) => s.id === design.subcategoryId,
-  );
+  // Memoize category lookups to avoid repeated calculations
+  const { category, subcategory } = useMemo(() => {
+    const categories = getCategories();
+    const cat = categories.find((c) => c.id === design.categoryId);
+    const subcat = cat?.subcategories?.find(
+      (s) => s.id === design.subcategoryId,
+    );
+    return { category: cat, subcategory: subcat };
+  }, [design.categoryId, design.subcategoryId]);
 
   // Determine the return URL based on the design's category/subcategory
-  const getReturnUrl = () => {
+  const getReturnUrl = useCallback(() => {
     const fromPage = searchParams.get("fromPage");
     if (!category) return "/";
 
@@ -31,7 +36,7 @@ export function DesignPageClient({ design }: DesignPageClientProps) {
     }
 
     return fromPage ? `${baseUrl}?fromPage=${fromPage}` : baseUrl;
-  };
+  }, [searchParams, category, subcategory]);
 
   return (
     <main className="h-screen overflow-hidden px-4 py-6">

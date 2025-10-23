@@ -2,7 +2,6 @@ import "~/styles/globals.css";
 
 import { type Metadata, type Viewport } from "next";
 import localFont from "next/font/local";
-import { AnimatedLayout } from "~/components/AnimatedLayout";
 import { IdleRedirect } from "~/components/IdleRedirect";
 import { PWAHandler } from "~/components/PWAHandler";
 
@@ -38,6 +37,7 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
+// Optimized: Only load essential font weights (400, 600) to reduce initial bundle size
 const futuraPt = localFont({
   variable: "--font-futura-pt",
   src: [
@@ -47,62 +47,18 @@ const futuraPt = localFont({
       style: "normal",
     },
     {
-      path: "../../public/fonts/FuturaPT-BookObl.ttf",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/FuturaPT-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/FuturaPT-MediumObl.ttf",
-      weight: "500",
-      style: "italic",
-    },
-    {
       path: "../../public/fonts/FuturaPT-Demi.ttf",
       weight: "600",
       style: "normal",
-    },
-    {
-      path: "../../public/fonts/FuturaPT-DemiObl.ttf",
-      weight: "600",
-      style: "italic",
     },
     {
       path: "../../public/fonts/FuturaPT-Bold.ttf",
       weight: "700",
       style: "normal",
     },
-    {
-      path: "../../public/fonts/FuturaPT-BoldObl.ttf",
-      weight: "700",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/FuturaPT-ExtraBold.ttf",
-      weight: "800",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/FuturaPT-ExtraBoldObl.ttf",
-      weight: "800",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/FuturaPT-Heavy.ttf",
-      weight: "900",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/FuturaPT-HeavyObl.ttf",
-      weight: "900",
-      style: "italic",
-    },
   ],
   display: "swap",
+  preload: true,
 });
 
 export default function RootLayout({

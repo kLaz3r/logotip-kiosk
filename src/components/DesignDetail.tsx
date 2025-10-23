@@ -1,13 +1,24 @@
 import Image from "next/image";
+import { memo, useMemo } from "react";
 import type { Design } from "~/data/types";
 
 interface DesignDetailProps {
   design: Design;
 }
 
-export function DesignDetail({ design }: DesignDetailProps) {
-  const formatRon = (value: number) => `${value.toLocaleString("ro-RO")} RON`;
-  const pricingEntries = Object.entries(design.pricing);
+export const DesignDetail = memo(function DesignDetail({
+  design,
+}: DesignDetailProps) {
+  const formatRon = useMemo(
+    () => (value: number) => `${value.toLocaleString("ro-RO")} RON`,
+    [],
+  );
+
+  const pricingEntries = useMemo(
+    () => Object.entries(design.pricing),
+    [design.pricing],
+  );
+
   const hasTags = Boolean(design.tags?.length);
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -103,4 +114,4 @@ export function DesignDetail({ design }: DesignDetailProps) {
       </div>
     </div>
   );
-}
+});

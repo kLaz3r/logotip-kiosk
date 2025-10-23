@@ -1,7 +1,7 @@
 "use client";
 
 import { notFound, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { BackButton } from "~/components/BackButton";
 import { DesignGrid } from "~/components/DesignGrid";
 import { NavigationBreadcrumb } from "~/components/NavigationBreadcrumb";
@@ -27,6 +27,39 @@ export function SubcategoryPageClient({
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
 
+  const itemsPerPage = 6;
+  const totalPages = useMemo(
+    () => Math.ceil(designs.length / itemsPerPage),
+    [designs.length, itemsPerPage],
+  );
+
+  const handleSwipeLeft = useCallback(() => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  }, [currentPage, totalPages]);
+
+  const handleSwipeRight = useCallback(() => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }, [currentPage]);
+
+  const swipeState = useSwipeGesture({
+    onSwipeLeft: handleSwipeLeft,
+    onSwipeRight: handleSwipeRight,
+  });
+
+  const transformStyle = useMemo(
+    () => ({
+      transform: `translateX(${swipeState.offset}px)`,
+      transition: swipeState.isTransitioning
+        ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+        : "none",
+    }),
+    [swipeState.offset, swipeState.isTransitioning],
+  );
+
   // Restore pagination state from URL params and clean up URL
   useEffect(() => {
     const fromPage = searchParams.get("fromPage");
@@ -40,31 +73,9 @@ export function SubcategoryPageClient({
     }
   }, [searchParams, router, categorySlug, subcategorySlug]);
 
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(designs.length / itemsPerPage);
-
-  const swipeState = useSwipeGesture({
-    onSwipeLeft: () => {
-      if (currentPage < totalPages) {
-        setCurrentPage(currentPage + 1);
-      }
-    },
-    onSwipeRight: () => {
-      if (currentPage > 1) {
-        setCurrentPage(currentPage - 1);
-      }
-    },
-  });
-
+  // Early returns after all hooks
   if (!category) return notFound();
   if (!subcategory) return notFound();
-
-  const transformStyle = {
-    transform: `translateX(${swipeState.offset}px)`,
-    transition: swipeState.isTransitioning
-      ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-      : "none",
-  };
 
   return (
     <main className="h-screen overflow-hidden px-4 py-6">

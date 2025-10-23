@@ -1,102 +1,20 @@
-"use client";
-
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { Pagination } from "~/components/Pagination";
-import { useSwipeGesture } from "~/hooks/useSwipeGesture";
+import { HomePageClient } from "~/components/HomePageClient";
 import { getCategories, getFirstImageForCategory } from "~/lib/catalogue";
 
+// Server component: fetch data on server, pass to client
 export default function HomePage() {
   const categories = getCategories();
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(categories.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const paginatedCategories = categories.slice(startIndex, endIndex);
 
-  const swipeState = useSwipeGesture({
-    onSwipeLeft: () => {
-      if (currentPage < totalPages) {
-        setCurrentPage(currentPage + 1);
-      }
+  // Pre-compute all category images on server to avoid client-side lookups
+  const categoryImages = categories.reduce(
+    (acc, cat) => {
+      acc[cat.id] = getFirstImageForCategory(cat.id);
+      return acc;
     },
-    onSwipeRight: () => {
-      if (currentPage > 1) {
-        setCurrentPage(currentPage - 1);
-      }
-    },
-  });
-
-  const transformStyle = {
-    transform: `translateX(${swipeState.offset}px)`,
-    transition: swipeState.isTransitioning
-      ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-      : "none",
-  };
+    {} as Record<string, string | undefined>,
+  );
 
   return (
-    <main className="h-screen overflow-hidden">
-      <section className="container mx-auto h-full bg-cover px-4 py-6">
-        <div className="flex h-full min-h-0 flex-col">
-          <div className="mb-6 flex shrink-0 items-center justify-between gap-4">
-            <h1 className="font-display text-3xl font-bold text-white">
-              Categorii de produse
-            </h1>
-            <Image
-              src="/logo.svg"
-              alt="Logotip"
-              width={140}
-              height={40}
-              priority
-              className="h-10 w-auto"
-            />
-          </div>
-          <div
-            className="mx-auto grid h-full w-full grid-cols-3 [grid-template-rows:repeat(2,minmax(0,1fr))] gap-3"
-            style={transformStyle}
-          >
-            {paginatedCategories.map((cat) => {
-              const firstImage = getFirstImageForCategory(cat.id);
-              return (
-                <Link
-                  key={cat.id}
-                  href={`/${cat.slug}`}
-                  className="block h-full"
-                >
-                  <div className="flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm transition hover:shadow-md active:scale-[0.98]">
-                    {firstImage && (
-                      <div className="bg-background relative w-full flex-1">
-                        <Image
-                          src={firstImage}
-                          alt={cat.name}
-                          fill
-                          className="object-cover"
-                          sizes="33vw"
-                        />
-                      </div>
-                    )}
-                    <div className="p-4 text-center">
-                      <h2 className="font-display text-primary text-lg leading-tight font-semibold">
-                        {cat.name}
-                      </h2>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-          <div className="mt-auto">
-            <Pagination
-              totalItems={categories.length}
-              itemsPerPage={itemsPerPage}
-              currentPage={currentPage}
-              onPageChange={setCurrentPage}
-            />
-          </div>
-        </div>
-      </section>
-    </main>
+    <HomePageClient categories={categories} categoryImages={categoryImages} />
   );
 }

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { memo, useMemo } from "react";
 import type { Design } from "~/data/types";
 
 interface DesignCardProps {
@@ -9,10 +10,17 @@ interface DesignCardProps {
   currentPage?: number;
 }
 
-export function DesignCard({ design, currentPage }: DesignCardProps) {
-  const href = currentPage
-    ? `/design/${design.id}?fromPage=${currentPage}`
-    : `/design/${design.id}`;
+export const DesignCard = memo(function DesignCard({
+  design,
+  currentPage,
+}: DesignCardProps) {
+  const href = useMemo(
+    () =>
+      currentPage
+        ? `/design/${design.id}?fromPage=${currentPage}`
+        : `/design/${design.id}`,
+    [design.id, currentPage],
+  );
 
   return (
     <div>
@@ -27,6 +35,7 @@ export function DesignCard({ design, currentPage }: DesignCardProps) {
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading={design.featured ? "eager" : "lazy"}
             priority={design.featured}
           />
         </div>
@@ -38,4 +47,4 @@ export function DesignCard({ design, currentPage }: DesignCardProps) {
       </Link>
     </div>
   );
-}
+});

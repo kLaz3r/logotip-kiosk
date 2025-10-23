@@ -101,7 +101,7 @@ export function useSwipeGesture({
       passive: true,
     });
     document.addEventListener("touchmove", handleTouchMove, { passive: true });
-    document.addEventListener("touchend", handleTouchEnd);
+    document.addEventListener("touchend", handleTouchEnd, { passive: true });
 
     return () => {
       document.removeEventListener("touchstart", handleTouchStart);

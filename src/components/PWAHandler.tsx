@@ -45,7 +45,7 @@ export function PWAHandler() {
         });
       });
 
-      // Pre-cache all visible images on the current page
+      // Pre-cache visible images using IntersectionObserver for better performance
       const cacheVisibleAssets = () => {
         if (!navigator.serviceWorker.controller) return;
 
@@ -62,12 +62,44 @@ export function PWAHandler() {
         }
       };
 
-      // Cache assets on initial load and when navigation happens
+      // Cache assets on initial load
       window.addEventListener("load", cacheVisibleAssets);
 
-      // Use a timeout to also catch dynamically loaded images
+      // Use IntersectionObserver to cache images as they become visible
+      const imageObserver = new IntersectionObserver(
+        (entries) => {
+          const visibleImages = entries
+            .filter((entry) => entry.isIntersecting)
+            .map((entry) => (entry.target as HTMLImageElement).src)
+            .filter((src) => src && !src.startsWith("data:"));
+
+          if (visibleImages.length > 0 && navigator.serviceWorker.controller) {
+            navigator.serviceWorker.controller.postMessage({
+              type: "CACHE_URLS",
+              urls: visibleImages,
+            });
+          }
+        },
+        {
+          rootMargin: "50px", // Preload images 50px before they enter viewport
+        },
+      );
+
+      // Observe all images
+      const observeImages = () => {
+        document.querySelectorAll("img").forEach((img) => {
+          imageObserver.observe(img);
+        });
+      };
+
+      // Throttled mutation observer to avoid excessive callbacks
+      let mutationTimeout: number | null = null;
       const observer = new MutationObserver(() => {
-        cacheVisibleAssets();
+        if (mutationTimeout) return;
+        mutationTimeout = window.setTimeout(() => {
+          observeImages();
+          mutationTimeout = null;
+        }, 500); // Throttle to 500ms
       });
 
       observer.observe(document.body, {
@@ -75,8 +107,12 @@ export function PWAHandler() {
         subtree: true,
       });
 
+      observeImages(); // Initial observation
+
       return () => {
         observer.disconnect();
+        imageObserver.disconnect();
+        if (mutationTimeout) window.clearTimeout(mutationTimeout);
       };
     }
 

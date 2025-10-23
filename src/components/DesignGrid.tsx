@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { memo, useMemo } from "react";
 import { DesignCard } from "~/components/DesignCard";
 import { Pagination } from "~/components/Pagination";
 import type { Design } from "~/data/types";
@@ -11,16 +12,18 @@ interface DesignGridProps {
   transformStyle?: CSSProperties;
 }
 
-export function DesignGrid({
+export const DesignGrid = memo(function DesignGrid({
   designs,
   currentPage = 1,
   onPageChange,
   itemsPerPage = 6,
   transformStyle,
 }: DesignGridProps) {
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const paginatedDesigns = designs.slice(startIndex, endIndex);
+  const paginatedDesigns = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return designs.slice(startIndex, endIndex);
+  }, [designs, currentPage, itemsPerPage]);
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
@@ -45,4 +48,4 @@ export function DesignGrid({
       )}
     </div>
   );
-}
+});
