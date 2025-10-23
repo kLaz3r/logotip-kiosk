@@ -161,7 +161,7 @@ export default function RootLayout({
       <body>
         <PWAHandler />
         <IdleRedirect />
-        <AnimatedLayout>{children}</AnimatedLayout>
+        {children}
       </body>
     </html>
   );

@@ -45,3 +45,27 @@ export function getFirstImageForCategory(
   const designs = getDesignsByCategory(categoryId, subcategoryId);
   return designs.length > 0 ? designs[0]?.image : undefined;
 }
+
+export function getAllCategorySlugs(): string[] {
+  return catalogueData.categories.map((cat) => cat.slug);
+}
+
+export function getAllSubcategoryPaths(): Array<{
+  category: string;
+  subcategory: string;
+}> {
+  const paths: Array<{ category: string; subcategory: string }> = [];
+
+  catalogueData.categories.forEach((category) => {
+    if (category.subcategories && category.subcategories.length > 0) {
+      category.subcategories.forEach((subcategory) => {
+        paths.push({
+          category: category.slug,
+          subcategory: subcategory.slug,
+        });
+      });
+    }
+  });
+
+  return paths;
+}
