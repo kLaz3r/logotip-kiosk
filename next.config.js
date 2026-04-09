@@ -162,9 +162,6 @@ const config = {
         : false,
   },
 
-  // Additional performance optimizations
-  swcMinify: true,
-
   // Headers for PWA and caching
   async headers() {
     return [
