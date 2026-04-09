@@ -1,6 +1,9 @@
 {
   "name": "Logotip",
   "short_name": "Logotip",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -18,5 +21,6 @@
   "display": "fullscreen",
   "orientation": "landscape",
   "theme_color": "#360D36",
-  "background_color": "#360D36"
+  "background_color": "#360D36",
+  "categories": ["business", "shopping"]
 }

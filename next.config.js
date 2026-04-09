@@ -5,136 +5,124 @@
 import withPWAInit from "@ducanh2912/next-pwa";
 import "./src/env.js";
 
+const ONE_YEAR = 365 * 24 * 60 * 60;
+
 const withPWA = withPWAInit({
   dest: "public",
   cacheOnFrontEndNav: true,
   aggressiveFrontEndNavCaching: true,
-  reloadOnOnline: true,
+  reloadOnOnline: false, // Don't reload on reconnect for kiosk mode
   disable: false,
   workboxOptions: {
     disableDevLogs: true,
+    // Precache critical pages for offline-first experience
+    skipWaiting: true,
+    clientsClaim: true,
+    cleanupOutdatedCaches: true,
     runtimeCaching: [
+      // FONTS: CacheFirst with long expiration (never expires for kiosk)
       {
-        urlPattern: /^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,
+        urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font\.css)$/i,
         handler: "CacheFirst",
-        options: {
-          cacheName: "google-fonts-webfonts",
-          expiration: {
-            maxEntries: 4,
-            maxAgeSeconds: 365 * 24 * 60 * 60, // 1 year
-          },
-        },
-      },
-      {
-        urlPattern: /^https:\/\/fonts\.(?:googleapis)\.com\/.*/i,
-        handler: "StaleWhileRevalidate",
-        options: {
-          cacheName: "google-fonts-stylesheets",
-          expiration: {
-            maxEntries: 4,
-            maxAgeSeconds: 7 * 24 * 60 * 60, // 1 week
-          },
-        },
-      },
-      {
-        urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
-        handler: "StaleWhileRevalidate",
         options: {
           cacheName: "static-font-assets",
           expiration: {
             maxEntries: 20,
-            maxAgeSeconds: 7 * 24 * 60 * 60, // 1 week
+            maxAgeSeconds: ONE_YEAR,
           },
         },
       },
+      // IMAGES: CacheFirst - all assets should be cached forever
       {
         urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
         handler: "CacheFirst",
         options: {
           cacheName: "static-image-assets",
           expiration: {
-            maxEntries: 500,
-            maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
+            maxEntries: 2000, // Increased for all kiosk images
+            maxAgeSeconds: ONE_YEAR,
           },
         },
       },
+      // NEXT.JS STATIC ASSETS: CacheFirst (these have hashed filenames)
       {
-        urlPattern: /\/_next\/static.+\.js$/i,
+        urlPattern: /\/_next\/static\/.+/i,
         handler: "CacheFirst",
         options: {
-          cacheName: "next-static-js-assets",
+          cacheName: "next-static-assets",
           expiration: {
-            maxEntries: 64,
-            maxAgeSeconds: 24 * 60 * 60, // 1 day
+            maxEntries: 100,
+            maxAgeSeconds: ONE_YEAR,
           },
         },
       },
+      // JS/CSS: CacheFirst with long expiration
       {
-        urlPattern: /\.(?:js)$/i,
-        handler: "StaleWhileRevalidate",
+        urlPattern: /\.(?:js|css)$/i,
+        handler: "CacheFirst",
         options: {
-          cacheName: "static-js-assets",
+          cacheName: "static-js-css-assets",
           expiration: {
-            maxEntries: 48,
-            maxAgeSeconds: 24 * 60 * 60, // 1 day
+            maxEntries: 100,
+            maxAgeSeconds: ONE_YEAR,
           },
         },
       },
+      // DATA FILES (catalogue.json): CacheFirst - data rarely changes
       {
-        urlPattern: /\.(?:css|less)$/i,
-        handler: "StaleWhileRevalidate",
-        options: {
-          cacheName: "static-style-assets",
-          expiration: {
-            maxEntries: 32,
-            maxAgeSeconds: 24 * 60 * 60, // 1 day
-          },
-        },
-      },
-      {
-        urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
-        handler: "StaleWhileRevalidate",
-        options: {
-          cacheName: "next-data",
-          expiration: {
-            maxEntries: 32,
-            maxAgeSeconds: 24 * 60 * 60, // 1 day
-          },
-        },
-      },
-      {
-        urlPattern: /\.(?:json|xml|csv)$/i,
-        handler: "NetworkFirst",
+        urlPattern: /\/data\/[^/]+\.json$/i,
+        handler: "CacheFirst",
         options: {
           cacheName: "static-data-assets",
           expiration: {
             maxEntries: 32,
-            maxAgeSeconds: 24 * 60 * 60, // 1 day
+            maxAgeSeconds: ONE_YEAR,
           },
         },
       },
+      // NEXT.JS PAGE DATA: StaleWhileRevalidate
       {
-        urlPattern: ({ url, sameOrigin }) =>
-          sameOrigin && url.pathname.startsWith("/api/"),
-        handler: "NetworkFirst",
+        urlPattern: /\/_next\/data\/.+\.json$/i,
+        handler: "StaleWhileRevalidate",
         options: {
-          cacheName: "apis",
-          networkTimeoutSeconds: 10,
+          cacheName: "next-data",
           expiration: {
-            maxEntries: 16,
-            maxAgeSeconds: 24 * 60 * 60, // 1 day
+            maxEntries: 200, // All pages
+            maxAgeSeconds: ONE_YEAR,
           },
         },
       },
+      // PAGES: StaleWhileRevalidate - works offline
+      // This is critical: serves cached pages when offline
       {
-        urlPattern: ({ url, sameOrigin }) =>
-          sameOrigin && !url.pathname.startsWith("/api/"),
-        handler: "NetworkFirst",
+        urlPattern: ({ url, sameOrigin }) => {
+          if (!sameOrigin) return false;
+          const path = url.pathname;
+          if (path.startsWith("/api/")) return false;
+          if (path.startsWith("/_next/")) return false;
+          if (path.startsWith("/assets/")) return false;
+          if (path.startsWith("/fonts/")) return false;
+          if (path.includes(".")) return false;
+          return true;
+        },
+        handler: "StaleWhileRevalidate",
         options: {
           cacheName: "pages",
           expiration: {
-            maxEntries: 32,
-            maxAgeSeconds: 24 * 60 * 60, // 1 day
+            maxEntries: 200,
+            maxAgeSeconds: ONE_YEAR,
+          },
+        },
+      },
+      // FALLBACK: Cache any other same-origin requests
+      {
+        urlPattern: ({ sameOrigin }) => sameOrigin,
+        handler: "StaleWhileRevalidate",
+        options: {
+          cacheName: "fallback",
+          expiration: {
+            maxEntries: 500,
+            maxAgeSeconds: ONE_YEAR,
           },
         },
       },
