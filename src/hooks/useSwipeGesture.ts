@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 interface SwipeGestureOptions {
   onSwipeLeft?: () => void;
@@ -18,21 +18,44 @@ export function useSwipeGesture({
 }: SwipeGestureOptions) {
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
+  const containerWidth = useRef<number>(0);
   const [swipeState, setSwipeState] = useState<SwipeState>({
     offset: 0,
     isTransitioning: false,
   });
 
-  // Reset isTransitioning after animation completes
+  // Get container width for animation calculations
   useEffect(() => {
-    if (swipeState.isTransitioning) {
-      const timeout = setTimeout(() => {
-        setSwipeState((prev) => ({ ...prev, isTransitioning: false }));
-      }, 300); // Match the CSS transition duration
+    const updateWidth = () => {
+      containerWidth.current = window.innerWidth;
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth, { passive: true });
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
 
-      return () => clearTimeout(timeout);
-    }
-  }, [swipeState.isTransitioning]);
+  // Trigger page navigation with delay for animation
+  const triggerSwipeLeft = useCallback(() => {
+    // Animate the content off-screen to the left
+    setSwipeState({ offset: -containerWidth.current * 0.3, isTransitioning: true });
+    // Delay actual page change to let animation play
+    setTimeout(() => {
+      onSwipeLeft?.();
+      // Reset after page change (component will unmount anyway, but for safety)
+      setSwipeState({ offset: 0, isTransitioning: false });
+    }, 300);
+  }, [onSwipeLeft]);
+
+  const triggerSwipeRight = useCallback(() => {
+    // Animate the content off-screen to the right
+    setSwipeState({ offset: containerWidth.current * 0.3, isTransitioning: true });
+    // Delay actual page change to let animation play
+    setTimeout(() => {
+      onSwipeRight?.();
+      // Reset after page change
+      setSwipeState({ offset: 0, isTransitioning: false });
+    }, 300);
+  }, [onSwipeRight]);
 
   useEffect(() => {
     const handleTouchStart = (e: TouchEvent) => {
@@ -54,10 +77,10 @@ export function useSwipeGesture({
 
       // Only track horizontal swipes
       if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        // Add resistance at the edges (using a very subtle damping factor)
-        const dampingFactor = 0.05;
+        // Add resistance for natural feel
+        const resistance = 0.6;
         setSwipeState({
-          offset: deltaX * dampingFactor,
+          offset: deltaX * resistance,
           isTransitioning: false,
         });
       }
@@ -77,15 +100,13 @@ export function useSwipeGesture({
       // Check if horizontal swipe is more dominant than vertical
       if (Math.abs(deltaX) > Math.abs(deltaY)) {
         if (deltaX > minSwipeDistance) {
-          // Swipe right (left to right) - go to previous page
-          setSwipeState({ offset: 0, isTransitioning: true });
-          onSwipeRight?.();
+          // Swipe right - animate then go to previous page
+          triggerSwipeRight();
         } else if (deltaX < -minSwipeDistance) {
-          // Swipe left (right to left) - go to next page
-          setSwipeState({ offset: 0, isTransitioning: true });
-          onSwipeLeft?.();
+          // Swipe left - animate then go to next page
+          triggerSwipeLeft();
         } else {
-          // Not enough distance, bounce back
+          // Not enough distance, bounce back smoothly
           setSwipeState({ offset: 0, isTransitioning: true });
         }
       } else {
@@ -97,18 +118,20 @@ export function useSwipeGesture({
       touchStartY.current = null;
     };
 
+    // Use capturing phase to ensure we get events even if other handlers stop propagation
     document.addEventListener("touchstart", handleTouchStart, {
       passive: true,
+      capture: true,
     });
-    document.addEventListener("touchmove", handleTouchMove, { passive: true });
-    document.addEventListener("touchend", handleTouchEnd, { passive: true });
+    document.addEventListener("touchmove", handleTouchMove, { passive: true, capture: true });
+    document.addEventListener("touchend", handleTouchEnd, { passive: true, capture: true });
 
     return () => {
-      document.removeEventListener("touchstart", handleTouchStart);
-      document.removeEventListener("touchmove", handleTouchMove);
-      document.removeEventListener("touchend", handleTouchEnd);
+      document.removeEventListener("touchstart", handleTouchStart, { capture: true });
+      document.removeEventListener("touchmove", handleTouchMove, { capture: true });
+      document.removeEventListener("touchend", handleTouchEnd, { capture: true });
     };
-  }, [onSwipeLeft, onSwipeRight, minSwipeDistance]);
+  }, [triggerSwipeLeft, triggerSwipeRight, minSwipeDistance]);
 
   return swipeState;
 }

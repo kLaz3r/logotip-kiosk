@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 
 interface IdleRedirectProps {
@@ -13,6 +13,7 @@ export function IdleRedirect({
   to = "/",
 }: IdleRedirectProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const timerRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -40,7 +41,8 @@ export function IdleRedirect({
       if (timerRef.current) window.clearTimeout(timerRef.current);
       events.forEach((evt) => window.removeEventListener(evt, reset));
     };
-  }, [router, timeoutMs, to]);
+    // Reset timer when pathname changes (page navigation)
+  }, [router, pathname, timeoutMs, to]);
 
   return null;
 }

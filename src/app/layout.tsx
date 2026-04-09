@@ -37,22 +37,22 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-// Optimized: Only load essential font weights (400, 600) to reduce initial bundle size
+// Optimized WOFF2 fonts: 87% smaller than TTF (~12-13KB vs 93-99KB each)
 const futuraPt = localFont({
   variable: "--font-futura-pt",
   src: [
     {
-      path: "../../public/fonts/FuturaPT-Book.ttf",
+      path: "../../public/fonts/FuturaPT-Book.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/FuturaPT-Demi.ttf",
+      path: "../../public/fonts/FuturaPT-Demi.woff2",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../public/fonts/FuturaPT-Bold.ttf",
+      path: "../../public/fonts/FuturaPT-Bold.woff2",
       weight: "700",
       style: "normal",
     },

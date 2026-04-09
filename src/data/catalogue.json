@@ -63,7 +63,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "My Love Colaj",
-      "image": "/assets/mugs/10798_4730783190 (1).jpg",
+      "image": "/assets/mugs/10798_4730783190 (1).webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -78,7 +78,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Grandma & Grandpa",
-      "image": "/assets/mugs/2 cani.jpg",
+      "image": "/assets/mugs/2 cani.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -108,7 +108,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Have a magic Christmas",
-      "image": "/assets/mugs/cana-metalica-emailata-cu-text-christmas-candies_01605002272.jpg",
+      "image": "/assets/mugs/cana-metalica-emailata-cu-text-christmas-candies_01605002272.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -123,7 +123,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Sarbatori Fericite",
-      "image": "/assets/mugs/cana-personalizata-cu-2-poze-si-mesaj-sarbatori-fericite_11668778007.jpg",
+      "image": "/assets/mugs/cana-personalizata-cu-2-poze-si-mesaj-sarbatori-fericite_11668778007.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -138,7 +138,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Merry Christmas Cats",
-      "image": "/assets/mugs/cana-personalizata-cu-text-cute-cats_61666786814.jpg",
+      "image": "/assets/mugs/cana-personalizata-cu-text-cute-cats_61666786814.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -153,7 +153,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Happy Holidays Cats",
-      "image": "/assets/mugs/cana-personalizata-cu-text-happy-holidays_61666852516.jpg",
+      "image": "/assets/mugs/cana-personalizata-cu-text-happy-holidays_61666852516.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -168,7 +168,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Bucuria Craciunului",
-      "image": "/assets/mugs/cana-personalizata-pentru-copii-cu-o-poza-christmas-joy_01601988181.jpg",
+      "image": "/assets/mugs/cana-personalizata-pentru-copii-cu-o-poza-christmas-joy_01601988181.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -183,7 +183,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Craciun cu poza",
-      "image": "/assets/mugs/cana-personalizata-pentru-copii-cu-o-poza-merry-christmas_01601991686.jpg",
+      "image": "/assets/mugs/cana-personalizata-pentru-copii-cu-o-poza-merry-christmas_01601991686.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -198,7 +198,7 @@
       "categoryId": "ceasuri",
       "subcategoryId": null,
       "name": "40 de ani impreuna",
-      "image": "/assets/ceasuri/ceas 1.jpg",
+      "image": "/assets/ceasuri/ceas 1.webp",
       "pricing": {
         "Ceas 200mm": 100,
         "Ceas 300mm": 120
@@ -211,7 +211,7 @@
       "categoryId": "ceasuri",
       "subcategoryId": null,
       "name": "Ceas Bebe",
-      "image": "/assets/ceasuri/ceas 2.jpg",
+      "image": "/assets/ceasuri/ceas 2.webp",
       "pricing": {
         "Ceas 200mm": 100,
         "Ceas 300mm": 120
@@ -224,7 +224,7 @@
       "categoryId": "ceasuri",
       "subcategoryId": null,
       "name": "La multi ani!",
-      "image": "/assets/ceasuri/ceas 3.jpg",
+      "image": "/assets/ceasuri/ceas 3.webp",
       "pricing": {
         "Ceas 200mm": 100,
         "Ceas 300mm": 120
@@ -237,7 +237,7 @@
       "categoryId": "ceasuri",
       "subcategoryId": null,
       "name": "Cei mai buni bunici",
-      "image": "/assets/ceasuri/ceas 4.jpg",
+      "image": "/assets/ceasuri/ceas 4.webp",
       "pricing": {
         "Ceas 200mm": 100,
         "Ceas 300mm": 120
@@ -250,7 +250,7 @@
       "categoryId": "ceasuri",
       "subcategoryId": null,
       "name": "Dinozauri Copii",
-      "image": "/assets/ceasuri/ceas 5.jpg",
+      "image": "/assets/ceasuri/ceas 5.webp",
       "pricing": {
         "Ceas 200mm": 100,
         "Ceas 300mm": 120
@@ -263,7 +263,7 @@
       "categoryId": "ceasuri",
       "subcategoryId": null,
       "name": "Proaspat Casatoriti",
-      "image": "/assets/ceasuri/ceas 7.jpg",
+      "image": "/assets/ceasuri/ceas 7.webp",
       "pricing": {
         "Ceas 200mm": 100,
         "Ceas 300mm": 120
@@ -276,7 +276,7 @@
       "categoryId": "ceasuri",
       "subcategoryId": null,
       "name": "Aniversare 2 ani",
-      "image": "/assets/ceasuri/ceas 8.jpg",
+      "image": "/assets/ceasuri/ceas 8.webp",
       "pricing": {
         "Ceas 200mm": 100,
         "Ceas 300mm": 120
@@ -289,7 +289,7 @@
       "categoryId": "ceasuri",
       "subcategoryId": null,
       "name": "Momentele noastre fericite",
-      "image": "/assets/ceasuri/ceas 9.jpg",
+      "image": "/assets/ceasuri/ceas 9.webp",
       "pricing": {
         "Ceas 200mm": 100,
         "Ceas 300mm": 120
@@ -302,7 +302,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Coffee is my Valentine",
-      "image": "/assets/mugs/coffe valentine mug.jpg",
+      "image": "/assets/mugs/coffe valentine mug.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -317,7 +317,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Cu recunostinta, domnului Diriginte",
-      "image": "/assets/cutii-etichete-vin/cutie-de-vin-personalizata-absolvire_01666184396.jpg",
+      "image": "/assets/cutii-etichete-vin/cutie-de-vin-personalizata-absolvire_01666184396.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -330,7 +330,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Glob de Craciun",
-      "image": "/assets/cutii-etichete-vin/cutie-de-vin-personalizata-glob-de-craciun_31511973729.jpg",
+      "image": "/assets/cutii-etichete-vin/cutie-de-vin-personalizata-glob-de-craciun_31511973729.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -343,7 +343,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Aniversare casatorie",
-      "image": "/assets/cutii-etichete-vin/cutie-de-vin-personalizata-model-de-casatorie_51514567274.jpg",
+      "image": "/assets/cutii-etichete-vin/cutie-de-vin-personalizata-model-de-casatorie_51514567274.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -356,7 +356,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Aniversare Majorat",
-      "image": "/assets/cutii-etichete-vin/Cutie vin.jpg",
+      "image": "/assets/cutii-etichete-vin/Cutie vin.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -369,7 +369,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Good Friends, Good Wine",
-      "image": "/assets/cutii-etichete-vin/CV aniversare.jpg",
+      "image": "/assets/cutii-etichete-vin/CV aniversare.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -382,7 +382,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Best. Boss. Ever.",
-      "image": "/assets/cutii-etichete-vin/CV best boss.jpg",
+      "image": "/assets/cutii-etichete-vin/CV best boss.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -395,7 +395,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Pentru Nasi 1",
-      "image": "/assets/cutii-etichete-vin/CV nasi 1.jpg",
+      "image": "/assets/cutii-etichete-vin/CV nasi 1.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -408,7 +408,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Pentru Nasi 2",
-      "image": "/assets/cutii-etichete-vin/CV nasi 2.jpg",
+      "image": "/assets/cutii-etichete-vin/CV nasi 2.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -421,7 +421,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Pentru Nasi 3",
-      "image": "/assets/cutii-etichete-vin/CV nasi 3.jpg",
+      "image": "/assets/cutii-etichete-vin/CV nasi 3.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -434,7 +434,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Pentru Nasi 4",
-      "image": "/assets/cutii-etichete-vin/CV nasi 4.jpg",
+      "image": "/assets/cutii-etichete-vin/CV nasi 4.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -447,7 +447,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Pentru Nasi 5",
-      "image": "/assets/cutii-etichete-vin/CV nasi 5.jpg",
+      "image": "/assets/cutii-etichete-vin/CV nasi 5.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -460,7 +460,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Pentru Nasi 6",
-      "image": "/assets/cutii-etichete-vin/CV nasi 6.jpg",
+      "image": "/assets/cutii-etichete-vin/CV nasi 6.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -473,7 +473,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Pentru Nasi 7",
-      "image": "/assets/cutii-etichete-vin/CV nasi 7.jpg",
+      "image": "/assets/cutii-etichete-vin/CV nasi 7.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -486,7 +486,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Pensionare Placuta",
-      "image": "/assets/cutii-etichete-vin/CV pensionare 1.jpg",
+      "image": "/assets/cutii-etichete-vin/CV pensionare 1.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -499,7 +499,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Cu recunostinta, domnului Profesor",
-      "image": "/assets/cutii-etichete-vin/CV profesor, dirig.jpg",
+      "image": "/assets/cutii-etichete-vin/CV profesor, dirig.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -512,7 +512,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Cel mai bun profesor",
-      "image": "/assets/cutii-etichete-vin/CV profesori 1.jpg",
+      "image": "/assets/cutii-etichete-vin/CV profesori 1.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -525,7 +525,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "I love your stupid face",
-      "image": "/assets/mugs/fb 1.jpg",
+      "image": "/assets/mugs/fb 1.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -540,7 +540,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Hocus Pocus",
-      "image": "/assets/mugs/HOCUS POCUS.jpg",
+      "image": "/assets/mugs/HOCUS POCUS.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -555,7 +555,7 @@
       "categoryId": "tocatoare-si-sorturi",
       "subcategoryId": null,
       "name": "Baby Chef",
-      "image": "/assets/tocatoare-si-sorturi/Mini tocator.jpg",
+      "image": "/assets/tocatoare-si-sorturi/Mini tocator.webp",
       "pricing": {
         "Sort": 75,
         "Tocator": 80
@@ -568,7 +568,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "40 and more Beautiful",
-      "image": "/assets/mugs/mug 1.jpg",
+      "image": "/assets/mugs/mug 1.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -583,7 +583,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "I love You Colaj",
-      "image": "/assets/mugs/mug 10.jpg",
+      "image": "/assets/mugs/mug 10.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -598,7 +598,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "50 Years of Love",
-      "image": "/assets/mugs/mug 11.jpg",
+      "image": "/assets/mugs/mug 11.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -613,7 +613,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Ms. Always Right",
-      "image": "/assets/mugs/mug 12.jpg",
+      "image": "/assets/mugs/mug 12.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -628,7 +628,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Cool",
-      "image": "/assets/mugs/mug 13.jpg",
+      "image": "/assets/mugs/mug 13.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -643,7 +643,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Witch in Training",
-      "image": "/assets/mugs/mug 14.jpg",
+      "image": "/assets/mugs/mug 14.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -658,7 +658,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Happy Birthday Gift",
-      "image": "/assets/mugs/mug 15.jpg",
+      "image": "/assets/mugs/mug 15.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -673,7 +673,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Teaching is a work of heart",
-      "image": "/assets/mugs/mug 16.jpg",
+      "image": "/assets/mugs/mug 16.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -688,7 +688,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "My dad is my hero",
-      "image": "/assets/mugs/mug 17.jpg",
+      "image": "/assets/mugs/mug 17.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -703,7 +703,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Best friends forever",
-      "image": "/assets/mugs/mug 18.jpg",
+      "image": "/assets/mugs/mug 18.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -718,7 +718,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Inima Valentine",
-      "image": "/assets/mugs/mug 19.jpg",
+      "image": "/assets/mugs/mug 19.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -733,7 +733,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "World's best Dad",
-      "image": "/assets/mugs/mug 2.jpg",
+      "image": "/assets/mugs/mug 2.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -763,7 +763,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Happy Birthday",
-      "image": "/assets/mugs/mug 21.jpg",
+      "image": "/assets/mugs/mug 21.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -793,7 +793,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Happy Birthday Photo",
-      "image": "/assets/mugs/mug 23.jpg",
+      "image": "/assets/mugs/mug 23.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -808,7 +808,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Time for a Break | Shiba Inu",
-      "image": "/assets/mugs/mug 24.png",
+      "image": "/assets/mugs/mug 24.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -823,7 +823,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "60 is the new 30",
-      "image": "/assets/mugs/mug 25.jpg",
+      "image": "/assets/mugs/mug 25.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -838,7 +838,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Birthday Balloons",
-      "image": "/assets/mugs/mug 26.png",
+      "image": "/assets/mugs/mug 26.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -853,7 +853,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Beautiful day to save Lives",
-      "image": "/assets/mugs/mug 27.jpg",
+      "image": "/assets/mugs/mug 27.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -868,7 +868,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Yoda best Doctor",
-      "image": "/assets/mugs/mug 28.jpg",
+      "image": "/assets/mugs/mug 28.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -883,7 +883,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Angels have Stethoscopes",
-      "image": "/assets/mugs/mug 29.png",
+      "image": "/assets/mugs/mug 29.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -898,7 +898,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Sisters connected by heart",
-      "image": "/assets/mugs/mug 3.jpg",
+      "image": "/assets/mugs/mug 3.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -913,7 +913,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "To the moon and back | Valentine",
-      "image": "/assets/mugs/mug 30.jpg",
+      "image": "/assets/mugs/mug 30.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -928,7 +928,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Love Baby",
-      "image": "/assets/mugs/mug 31.jpg",
+      "image": "/assets/mugs/mug 31.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -943,7 +943,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Yoda best Brother",
-      "image": "/assets/mugs/mug 32.jpg",
+      "image": "/assets/mugs/mug 32.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -958,7 +958,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Being my brother is the best gift",
-      "image": "/assets/mugs/mug 33.jpg",
+      "image": "/assets/mugs/mug 33.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -973,7 +973,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Sisters connected by heart",
-      "image": "/assets/mugs/mug 4.jpg",
+      "image": "/assets/mugs/mug 4.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -988,7 +988,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Best teacher ever",
-      "image": "/assets/mugs/mug 5.jpg",
+      "image": "/assets/mugs/mug 5.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -1003,7 +1003,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Boss of the year",
-      "image": "/assets/mugs/mug 6.jpg",
+      "image": "/assets/mugs/mug 6.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -1018,7 +1018,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Best dad in the universe",
-      "image": "/assets/mugs/mug 7.jpg",
+      "image": "/assets/mugs/mug 7.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -1033,7 +1033,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Crazy little sister",
-      "image": "/assets/mugs/mug 8.jpg",
+      "image": "/assets/mugs/mug 8.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -1048,7 +1048,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "I'm CEO, bitch!",
-      "image": "/assets/mugs/mug 9.jpg",
+      "image": "/assets/mugs/mug 9.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -1063,7 +1063,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Mug Architect",
-      "image": "/assets/mugs/mug architect.jpg",
+      "image": "/assets/mugs/mug architect.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -1078,7 +1078,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Mug Architect 2",
-      "image": "/assets/mugs/mug architect 2.jpg",
+      "image": "/assets/mugs/mug architect 2.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -1093,7 +1093,7 @@
       "categoryId": "tocatoare-si-sorturi",
       "subcategoryId": null,
       "name": "Big & Lil Chef",
-      "image": "/assets/tocatoare-si-sorturi/original_big-lil-chef-father-and-son-apron-set.jpg",
+      "image": "/assets/tocatoare-si-sorturi/original_big-lil-chef-father-and-son-apron-set.webp",
       "pricing": {
         "Sort": 75,
         "Tocator": 80
@@ -1106,7 +1106,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Song Mug",
-      "image": "/assets/mugs/song mug.jpg",
+      "image": "/assets/mugs/song mug.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,
@@ -1121,7 +1121,7 @@
       "categoryId": "tocatoare-si-sorturi",
       "subcategoryId": null,
       "name": "Iubitorii de gogosi",
-      "image": "/assets/tocatoare-si-sorturi/sort-personalizat-pentru-copii-cu-text-iubitorii-de-gogosi_21585132412.jpg",
+      "image": "/assets/tocatoare-si-sorturi/sort-personalizat-pentru-copii-cu-text-iubitorii-de-gogosi_21585132412.webp",
       "pricing": {
         "Sort": 75,
         "Tocator": 80
@@ -1134,7 +1134,7 @@
       "categoryId": "tocatoare-si-sorturi",
       "subcategoryId": null,
       "name": "Junior de Bucatar",
-      "image": "/assets/tocatoare-si-sorturi/sort-personalizat-pentru-copii-cu-text-junior-de-bucatar_21585298935.jpg",
+      "image": "/assets/tocatoare-si-sorturi/sort-personalizat-pentru-copii-cu-text-junior-de-bucatar_21585298935.webp",
       "pricing": {
         "Sort": 75,
         "Tocator": 80
@@ -1147,7 +1147,7 @@
       "categoryId": "tocatoare-si-sorturi",
       "subcategoryId": null,
       "name": "Maestru In Devenire",
-      "image": "/assets/tocatoare-si-sorturi/sort-personalizat-pentru-copii-cu-text-maestru-in-devenire_21585156232.jpg",
+      "image": "/assets/tocatoare-si-sorturi/sort-personalizat-pentru-copii-cu-text-maestru-in-devenire_21585156232.webp",
       "pricing": {
         "Sort": 75,
         "Tocator": 80
@@ -1160,7 +1160,7 @@
       "categoryId": "tocatoare-si-sorturi",
       "subcategoryId": null,
       "name": "Reteta secreta",
-      "image": "/assets/tocatoare-si-sorturi/Tocator 1.jpg",
+      "image": "/assets/tocatoare-si-sorturi/Tocator 1.webp",
       "pricing": {
         "Sort": 75,
         "Tocator": 80
@@ -1173,7 +1173,7 @@
       "categoryId": "tocatoare-si-sorturi",
       "subcategoryId": null,
       "name": "Queen of the kitchen",
-      "image": "/assets/tocatoare-si-sorturi/Tocator 2.jpg",
+      "image": "/assets/tocatoare-si-sorturi/Tocator 2.webp",
       "pricing": {
         "Sort": 75,
         "Tocator": 80
@@ -1186,7 +1186,7 @@
       "categoryId": "tocatoare-si-sorturi",
       "subcategoryId": null,
       "name": "Chef Laurentiu",
-      "image": "/assets/tocatoare-si-sorturi/Tocator 3.jpg",
+      "image": "/assets/tocatoare-si-sorturi/Tocator 3.webp",
       "pricing": {
         "Sort": 75,
         "Tocator": 80
@@ -1199,7 +1199,7 @@
       "categoryId": "tocatoare-si-sorturi",
       "subcategoryId": null,
       "name": "The grillfather",
-      "image": "/assets/tocatoare-si-sorturi/Tocator 4.jpg",
+      "image": "/assets/tocatoare-si-sorturi/Tocator 4.webp",
       "pricing": {
         "Sort": 75,
         "Tocator": 80
@@ -1212,7 +1212,7 @@
       "categoryId": "tocatoare-si-sorturi",
       "subcategoryId": null,
       "name": "Chef Sebastian",
-      "image": "/assets/tocatoare-si-sorturi/tocator-din-bambus-personalizat-chef_11657702570.jpg",
+      "image": "/assets/tocatoare-si-sorturi/tocator-din-bambus-personalizat-chef_11657702570.webp",
       "pricing": {
         "Sort": 75,
         "Tocator": 80
@@ -1225,7 +1225,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Beautiful, but Crazy",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-mesaj-amuzant.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-mesaj-amuzant.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1239,7 +1239,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-cupluri",
       "name": "I-am furat inima | I-am furat numele",
-      "image": "/assets/tricouri/tricouri-cupluri/tricou-din-bumbac-personalizat-cu-text.jpg",
+      "image": "/assets/tricouri/tricouri-cupluri/tricou-din-bumbac-personalizat-cu-text.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1253,7 +1253,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mamici-tatici",
       "name": "Barbatii adevarati sunt promovati tati",
-      "image": "/assets/tricouri/tricouri-mamici-tatici/tricou-din-bumbac-personalizat-cu-text.jpg",
+      "image": "/assets/tricouri/tricouri-mamici-tatici/tricou-din-bumbac-personalizat-cu-text.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1267,7 +1267,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "Acum 18 Ani s-a nascut o diva",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-acum-18-ani.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-acum-18-ani.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1281,7 +1281,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "Arat Bine La Varsta Mea",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-arat-bine-la-varsta-mea.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-arat-bine-la-varsta-mea.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1295,7 +1295,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Come on Barbie, let's go party!",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-barbie.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-barbie.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1309,7 +1309,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mamici-tatici",
       "name": "Becoming A Father",
-      "image": "/assets/tricouri/tricouri-mamici-tatici/tricou-din-bumbac-personalizat-cu-text-becoming-a-father.jpg",
+      "image": "/assets/tricouri/tricouri-mamici-tatici/tricou-din-bumbac-personalizat-cu-text-becoming-a-father.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1323,7 +1323,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "I Make Beer Dissapear",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-beer.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-beer.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1337,7 +1337,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Burtos De La Bere",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-burtos-de-la-bere.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-burtos-de-la-bere.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1351,7 +1351,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Degustator De Bere",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-degustator-de-bere.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-degustator-de-bere.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1365,7 +1365,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Marriage is a workshop",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-despre-casatorie.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-despre-casatorie.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1379,7 +1379,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Fac ce vreau, sau nu?",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-fac-ce-vreau.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-fac-ce-vreau.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1393,7 +1393,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mamici-tatici",
       "name": "Gamer Daddy",
-      "image": "/assets/tricouri/tricouri-mamici-tatici/tricou-din-bumbac-personalizat-cu-text-gamer.jpg",
+      "image": "/assets/tricouri/tricouri-mamici-tatici/tricou-din-bumbac-personalizat-cu-text-gamer.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1407,7 +1407,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Ho Ho Ho, ca vin!",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-ho-ho-ho.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-ho-ho-ho.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1421,7 +1421,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "Faimos, Sot, Tata",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-istoria.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-istoria.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1435,7 +1435,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "Made In",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-made-in.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-made-in.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1449,7 +1449,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "Acum pot face Legal",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-majorat.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-majorat.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1463,7 +1463,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Unde poti sa legi cu sarma",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-mecanic.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-mecanic.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1477,7 +1477,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Mrs. Always Right",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-mrs-always-right.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-mrs-always-right.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1491,7 +1491,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Nasa Bogatasa",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-nasa-bogatasa.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-nasa-bogatasa.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1505,7 +1505,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-burlaci-burlacite",
       "name": "I'm getting married!",
-      "image": "/assets/tricouri/tricouri-burlaci-burlacite/tricou-din-bumbac-personalizat-cu-text-pentru-burlacite.jpg",
+      "image": "/assets/tricouri/tricouri-burlaci-burlacite/tricou-din-bumbac-personalizat-cu-text-pentru-burlacite.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1519,7 +1519,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Beer & Fishing",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-pentru-pescari.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-pentru-pescari.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1533,7 +1533,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-cupluri",
       "name": "My Perfect Match",
-      "image": "/assets/tricouri/tricouri-cupluri/tricou-din-bumbac-personalizat-cu-text-perfect-match.jpg",
+      "image": "/assets/tricouri/tricouri-cupluri/tricou-din-bumbac-personalizat-cu-text-perfect-match.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1547,7 +1547,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "I am perfect since",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-perfect-since.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-din-bumbac-personalizat-cu-text-perfect-since.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1561,7 +1561,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Super Mama",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-super-mama.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-super-mama.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1575,7 +1575,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "V Is For Video Games",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-v-is-for-video-games.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-din-bumbac-personalizat-cu-text-v-is-for-video-games.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1589,7 +1589,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "All Original Parts",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-personalizat-all-original-parts.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-personalizat-all-original-parts.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1603,7 +1603,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-cupluri",
       "name": "Soulmates Forever",
-      "image": "/assets/tricouri/tricouri-cupluri/tricou-personalizat-cu-o-poza-si-text-love.jpg",
+      "image": "/assets/tricouri/tricouri-cupluri/tricou-personalizat-cu-o-poza-si-text-love.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1617,7 +1617,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "Sot si Tatic | Editie Limitata",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-personalizat-cu-text-editie-limitata.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-personalizat-cu-text-editie-limitata.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1631,7 +1631,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Installing Muscles",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-personalizat-cu-text-installing-muscles.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-personalizat-cu-text-installing-muscles.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1645,7 +1645,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Just Drink It",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-personalizat-cu-text-just-drink-it.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-personalizat-cu-text-just-drink-it.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1659,7 +1659,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-burlaci-burlacite",
       "name": "Echipa de baut a mirelui",
-      "image": "/assets/tricouri/tricouri-burlaci-burlacite/tricou-personalizat-cu-text-pentru-petrecerea-burlacilor-echipa-mirelui.jpg",
+      "image": "/assets/tricouri/tricouri-burlaci-burlacite/tricou-personalizat-cu-text-pentru-petrecerea-burlacilor-echipa-mirelui.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1673,7 +1673,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "Special Quotes",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-personalizat-cu-text-special-quotes.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-personalizat-cu-text-special-quotes.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1687,7 +1687,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mamici-tatici",
       "name": "Super Tata",
-      "image": "/assets/tricouri/tricouri-mamici-tatici/tricou-personalizat-cu-text-super-tata.jpg",
+      "image": "/assets/tricouri/tricouri-mamici-tatici/tricou-personalizat-cu-text-super-tata.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1701,7 +1701,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-mesaje-amuzante",
       "name": "#tired",
-      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-personalizat-hashtag.jpg",
+      "image": "/assets/tricouri/tricouri-mesaje-amuzante/tricou-personalizat-hashtag.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1715,7 +1715,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "Limited Edition 1",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-personalizat-limited-edition.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-personalizat-limited-edition.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1729,7 +1729,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "Limited Edition 2",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-personalizat-limited-edition. 1.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-personalizat-limited-edition. 1.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1743,7 +1743,7 @@
       "categoryId": "tricouri",
       "subcategoryId": "tricouri-aniversari",
       "name": "An De Fabricatie",
-      "image": "/assets/tricouri/tricouri-aniversari/tricou-personalizat-model-an-de-fabricatie.jpg",
+      "image": "/assets/tricouri/tricouri-aniversari/tricou-personalizat-model-an-de-fabricatie.webp",
       "pricing": {
         "Tricou": 35,
         "Imprimare A4": 35,
@@ -1757,7 +1757,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Sarbatori fericite | Poza si mesaj",
-      "image": "/assets/cutii-etichete-vin/vin-personalizat-cu-o-poza-si-mesaj-sarbatori-fericite_21668608720.jpg",
+      "image": "/assets/cutii-etichete-vin/vin-personalizat-cu-o-poza-si-mesaj-sarbatori-fericite_21668608720.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -1770,7 +1770,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Jolly Juice",
-      "image": "/assets/cutii-etichete-vin/vin-personalizat-cu-text-jolly-juice_11659446853.jpg",
+      "image": "/assets/cutii-etichete-vin/vin-personalizat-cu-text-jolly-juice_11659446853.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -1783,7 +1783,7 @@
       "categoryId": "cutii-etichete-vin",
       "subcategoryId": null,
       "name": "Urare de Craciun",
-      "image": "/assets/cutii-etichete-vin/vin-personalizat-cu-text-urare-de-craciun_11659446749.jpg",
+      "image": "/assets/cutii-etichete-vin/vin-personalizat-cu-text-urare-de-craciun_11659446749.webp",
       "pricing": {
         "Cutie Lemn de Vin": 80,
         "Eticheta Sticla de Vin": 30
@@ -1796,7 +1796,7 @@
       "categoryId": "mugs",
       "subcategoryId": null,
       "name": "Yoda best doctor",
-      "image": "/assets/mugs/yoda3.jpg",
+      "image": "/assets/mugs/yoda3.webp",
       "pricing": {
         "Cana alba": 30,
         "Cana cu interior colorat": 35,

@@ -159,7 +159,6 @@ const config = {
 
   // Asset optimization and performance improvements
   experimental: {
-    optimizePackageImports: ["motion"],
     // Enable CSS optimization with critters
     optimizeCss: true,
   },
