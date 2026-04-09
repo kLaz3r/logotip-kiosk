@@ -147,7 +147,7 @@ const config = {
 
   // Asset optimization and performance improvements
   experimental: {
-    // Enable CSS optimization with critters
+    // Enable CSS optimization
     optimizeCss: true,
   },
 
