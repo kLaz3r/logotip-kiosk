@@ -1,23 +1,16 @@
 import Image from "next/image";
-import { memo, useMemo } from "react";
 import type { Design } from "~/data/types";
 
 interface DesignDetailProps {
   design: Design;
 }
 
-export const DesignDetail = memo(function DesignDetail({
+export function DesignDetail({
   design,
 }: DesignDetailProps) {
-  const formatRon = useMemo(
-    () => (value: number) => `${value.toLocaleString("ro-RO")} RON`,
-    [],
-  );
+  const formatRon = (value: number) => `${value.toLocaleString("ro-RO")} RON`;
 
-  const pricingEntries = useMemo(
-    () => Object.entries(design.pricing),
-    [design.pricing],
-  );
+  const pricingEntries = Object.entries(design.pricing);
 
   const hasTags = Boolean(design.tags?.length);
   return (
@@ -114,4 +107,4 @@ export const DesignDetail = memo(function DesignDetail({
       </div>
     </div>
   );
-});
+}

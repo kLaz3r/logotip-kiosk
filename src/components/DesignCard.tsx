@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import type { Design } from "~/data/types";
 
 interface DesignCardProps {
@@ -14,13 +14,9 @@ export const DesignCard = memo(function DesignCard({
   design,
   currentPage,
 }: DesignCardProps) {
-  const href = useMemo(
-    () =>
-      currentPage
-        ? `/design/${design.id}?fromPage=${currentPage}`
-        : `/design/${design.id}`,
-    [design.id, currentPage],
-  );
+  const href = currentPage
+    ? `/design/${design.id}?fromPage=${currentPage}`
+    : `/design/${design.id}`;
 
   return (
     <div>

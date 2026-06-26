@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useMemo, useState } from "react";
+import { useState } from "react";
 import { Pagination } from "~/components/Pagination";
 import type { Category } from "~/data/types";
 import { useSwipeGesture } from "~/hooks/useSwipeGesture";
@@ -19,43 +19,36 @@ export function HomePageClient({
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  const totalPages = useMemo(
-    () => Math.ceil(categories.length / itemsPerPage),
-    [categories.length, itemsPerPage],
+  const totalPages = Math.ceil(categories.length / itemsPerPage);
+
+  const paginatedCategories = categories.slice(
+    (currentPage - 1) * itemsPerPage,
+    (currentPage - 1) * itemsPerPage + itemsPerPage,
   );
 
-  const paginatedCategories = useMemo(() => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    return categories.slice(startIndex, endIndex);
-  }, [categories, currentPage, itemsPerPage]);
-
-  const handleSwipeLeft = useCallback(() => {
+  const handleSwipeLeft = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
-  }, [currentPage, totalPages]);
+  };
 
-  const handleSwipeRight = useCallback(() => {
+  const handleSwipeRight = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-  }, [currentPage]);
+  };
 
   const swipeState = useSwipeGesture({
     onSwipeLeft: handleSwipeLeft,
     onSwipeRight: handleSwipeRight,
   });
 
-  const transformStyle = useMemo(
-    () => ({
-      transform: `translateX(${swipeState.offset}px)`,
-      transition: swipeState.isTransitioning
-        ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-        : "none",
-    }),
-    [swipeState.offset, swipeState.isTransitioning],
-  );
+  const transformStyle = {
+    transform: `translateX(${swipeState.offset}px)`,
+    transition: swipeState.isTransitioning
+      ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      : "none",
+  };
 
   return (
     <main className="h-screen overflow-hidden">

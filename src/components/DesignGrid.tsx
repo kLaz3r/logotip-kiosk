@@ -21,8 +21,7 @@ export const DesignGrid = memo(function DesignGrid({
 }: DesignGridProps) {
   const paginatedDesigns = useMemo(() => {
     const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    return designs.slice(startIndex, endIndex);
+    return designs.slice(startIndex, startIndex + itemsPerPage);
   }, [designs, currentPage, itemsPerPage]);
 
   return (

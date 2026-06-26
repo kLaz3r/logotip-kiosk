@@ -1,7 +1,7 @@
 "use client";
 
-import { notFound, useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { BackButton } from "~/components/BackButton";
 import { CategoryCard } from "~/components/CategoryCard";
 import { DesignGrid } from "~/components/DesignGrid";
@@ -28,46 +28,40 @@ export function CategoryPageClient({
 
   const hasSubcategories = Boolean(category?.subcategories?.length);
   const itemsPerPage = 6;
-  const subcategories = useMemo(
-    () => category?.subcategories ?? [],
-    [category?.subcategories],
-  );
+  const subcategories = category?.subcategories ?? [];
 
   const paginatedSubcategories = useMemo(() => {
     if (!hasSubcategories) return [];
     const startIndex = (currentPage - 1) * itemsPerPage;
     return subcategories.slice(startIndex, startIndex + itemsPerPage);
-  }, [hasSubcategories, subcategories, currentPage, itemsPerPage]);
+  }, [hasSubcategories, subcategories, currentPage]);
 
   const totalItems = hasSubcategories ? subcategories.length : designs.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  const handleSwipeLeft = useCallback(() => {
+  const handleSwipeLeft = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
-  }, [currentPage, totalPages]);
+  };
 
-  const handleSwipeRight = useCallback(() => {
+  const handleSwipeRight = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-  }, [currentPage]);
+  };
 
   const swipeState = useSwipeGesture({
     onSwipeLeft: handleSwipeLeft,
     onSwipeRight: handleSwipeRight,
   });
 
-  const transformStyle = useMemo(
-    () => ({
-      transform: `translateX(${swipeState.offset}px)`,
-      transition: swipeState.isTransitioning
-        ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-        : "none",
-    }),
-    [swipeState.offset, swipeState.isTransitioning],
-  );
+  const transformStyle = {
+    transform: `translateX(${swipeState.offset}px)`,
+    transition: swipeState.isTransitioning
+      ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      : "none",
+  };
 
   // Restore pagination state from URL params and clean up URL
   useEffect(() => {
@@ -76,14 +70,10 @@ export function CategoryPageClient({
       const pageNumber = parseInt(fromPage, 10);
       if (pageNumber > 0) {
         setCurrentPage(pageNumber);
-        // Replace the URL to remove the fromPage parameter
         router.replace(`/${categorySlug}`);
       }
     }
   }, [searchParams, router, categorySlug]);
-
-  // Early return after all hooks
-  if (!category) return notFound();
 
   return (
     <main className="h-screen overflow-hidden px-4 py-6">

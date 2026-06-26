@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { memo } from "react";
 import type { Category } from "~/data/types";
 
 interface CategoryCardProps {
@@ -11,7 +10,7 @@ interface CategoryCardProps {
   image?: string;
 }
 
-export const CategoryCard = memo(function CategoryCard({
+export function CategoryCard({
   category,
   href,
   image,
@@ -46,4 +45,4 @@ export const CategoryCard = memo(function CategoryCard({
       </Link>
     </div>
   );
-});
+}

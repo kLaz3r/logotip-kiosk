@@ -1,7 +1,7 @@
 "use client";
 
-import { notFound, useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { BackButton } from "~/components/BackButton";
 import { DesignGrid } from "~/components/DesignGrid";
 import { NavigationBreadcrumb } from "~/components/NavigationBreadcrumb";
@@ -28,37 +28,31 @@ export function SubcategoryPageClient({
   const [currentPage, setCurrentPage] = useState(1);
 
   const itemsPerPage = 6;
-  const totalPages = useMemo(
-    () => Math.ceil(designs.length / itemsPerPage),
-    [designs.length, itemsPerPage],
-  );
+  const totalPages = Math.ceil(designs.length / itemsPerPage);
 
-  const handleSwipeLeft = useCallback(() => {
+  const handleSwipeLeft = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
-  }, [currentPage, totalPages]);
+  };
 
-  const handleSwipeRight = useCallback(() => {
+  const handleSwipeRight = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-  }, [currentPage]);
+  };
 
   const swipeState = useSwipeGesture({
     onSwipeLeft: handleSwipeLeft,
     onSwipeRight: handleSwipeRight,
   });
 
-  const transformStyle = useMemo(
-    () => ({
-      transform: `translateX(${swipeState.offset}px)`,
-      transition: swipeState.isTransitioning
-        ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-        : "none",
-    }),
-    [swipeState.offset, swipeState.isTransitioning],
-  );
+  const transformStyle = {
+    transform: `translateX(${swipeState.offset}px)`,
+    transition: swipeState.isTransitioning
+      ? "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      : "none",
+  };
 
   // Restore pagination state from URL params and clean up URL
   useEffect(() => {
@@ -67,15 +61,10 @@ export function SubcategoryPageClient({
       const pageNumber = parseInt(fromPage, 10);
       if (pageNumber > 0) {
         setCurrentPage(pageNumber);
-        // Replace the URL to remove the fromPage parameter
         router.replace(`/${categorySlug}/${subcategorySlug}`);
       }
     }
   }, [searchParams, router, categorySlug, subcategorySlug]);
-
-  // Early returns after all hooks
-  if (!category) return notFound();
-  if (!subcategory) return notFound();
 
   return (
     <main className="h-screen overflow-hidden px-4 py-6">

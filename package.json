@@ -14,7 +14,9 @@
     "preview": "next build && next start",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "generate:catalogue": "node ./scripts/generateCatalogue.mjs"
+    "generate:catalogue": "node ./scripts/generateCatalogue.mjs",
+    "generate:static": "node ./scripts/generate-static-site.mjs",
+    "serve:static": "node ./scripts/generate-static-site.mjs && npx serve dist-static"
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.9",

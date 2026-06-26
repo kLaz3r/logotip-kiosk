@@ -137,19 +137,16 @@ const config = {
   poweredByHeader: false,
   compress: true,
 
-  // Image optimization for better performance
+  // Image optimization: target tablet resolutions only (no 4K/8K)
   images: {
     formats: ["image/webp", "image/avif"],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    deviceSizes: [640, 750, 828, 1080, 1280, 1600],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
     minimumCacheTTL: 31536000, // 1 year
   },
 
   // Asset optimization and performance improvements
-  experimental: {
-    // Enable CSS optimization
-    optimizeCss: true,
-  },
+  productionBrowserSourceMaps: false,
 
   // Compiler optimizations
   compiler: {

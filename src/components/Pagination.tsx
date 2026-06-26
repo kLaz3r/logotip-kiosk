@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useCallback, useMemo } from "react";
+import { memo } from "react";
 
 interface PaginationProps {
   totalItems: number;
@@ -15,60 +15,41 @@ export const Pagination = memo(function Pagination({
   onPageChange,
   currentPage,
 }: PaginationProps) {
-  const totalPages = useMemo(
-    () => Math.ceil(totalItems / itemsPerPage),
-    [totalItems, itemsPerPage],
-  );
-
-  const visiblePages = useMemo(() => {
-    if (totalPages <= 1) return [];
-
-    const pages = [];
-    const maxVisible = 5;
-
-    if (totalPages <= maxVisible) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      if (currentPage <= 3) {
-        pages.push(1, 2, 3, 4, 5);
-      } else if (currentPage >= totalPages - 2) {
-        pages.push(
-          totalPages - 4,
-          totalPages - 3,
-          totalPages - 2,
-          totalPages - 1,
-          totalPages,
-        );
-      } else {
-        pages.push(
-          currentPage - 2,
-          currentPage - 1,
-          currentPage,
-          currentPage + 1,
-          currentPage + 2,
-        );
-      }
-    }
-
-    return pages;
-  }, [totalPages, currentPage]);
-
-  const handlePrevious = useCallback(() => {
-    onPageChange(currentPage - 1);
-  }, [onPageChange, currentPage]);
-
-  const handleNext = useCallback(() => {
-    onPageChange(currentPage + 1);
-  }, [onPageChange, currentPage]);
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   if (totalPages <= 1) return null;
+
+  const visiblePages: number[] = [];
+  const maxVisible = 5;
+
+  if (totalPages <= maxVisible) {
+    for (let i = 1; i <= totalPages; i++) {
+      visiblePages.push(i);
+    }
+  } else if (currentPage <= 3) {
+    visiblePages.push(1, 2, 3, 4, 5);
+  } else if (currentPage >= totalPages - 2) {
+    visiblePages.push(
+      totalPages - 4,
+      totalPages - 3,
+      totalPages - 2,
+      totalPages - 1,
+      totalPages,
+    );
+  } else {
+    visiblePages.push(
+      currentPage - 2,
+      currentPage - 1,
+      currentPage,
+      currentPage + 1,
+      currentPage + 2,
+    );
+  }
 
   return (
     <div className="mt-4 flex items-center justify-center gap-2">
       <button
-        onClick={handlePrevious}
+        onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         className="text-primary hover:bg-primary/5 rounded-md border border-black/10 bg-white px-3 py-1.5 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
       >
@@ -92,7 +73,7 @@ export const Pagination = memo(function Pagination({
       </div>
 
       <button
-        onClick={handleNext}
+        onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         className="text-primary hover:bg-primary/5 rounded-md border border-black/10 bg-white px-3 py-1.5 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
       >

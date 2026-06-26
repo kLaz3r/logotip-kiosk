@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  /* Fonts */
   --font-sans:
     ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
   --font-display: var(--font-futura-pt), ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand Colors */
   --color-text: oklch(18.22% 0.072 329.37);
   --color-background: oklch(97.17% 0.021 328.08);
   --color-primary: oklch(24.88% 0.087 327.81);
@@ -15,7 +13,6 @@
   --color-accent: oklch(75.76% 0.172 130.09);
 }
 
-/* Base defaults */
 html,
 body {
   height: 100%;
@@ -23,42 +20,13 @@ body {
 
 body {
   @apply bg-background text-text font-sans antialiased;
-}
-
-/* Global background image so route transitions never expose white */
-html {
-  background-color: var(--color-background);
-}
-
-body {
   background-image: url("/logotip-bg.svg");
-  background-color: var(--color-background);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* Performance optimizations: CSS containment for better paint performance */
-.container {
-  contain: layout style;
-}
-
-/* Optimize grid rendering */
-[class*="grid"] {
-  contain: layout style;
-  will-change: auto;
-}
-
-/* Optimize cards for better repainting */
-[class*="rounded-xl"],
-[class*="rounded-lg"] {
-  contain: layout paint;
-  transform: translateZ(0); /* Force GPU acceleration */
-}
-
-/* Optimize image containers */
-[class*="relative"][class*="flex-1"] {
-  contain: strict;
-  content-visibility: auto;
+html {
+  background-color: var(--color-background);
 }

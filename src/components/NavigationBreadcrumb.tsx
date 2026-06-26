@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { memo } from "react";
 
 interface BreadcrumbItem {
   label: string;
@@ -11,7 +10,7 @@ interface NavigationBreadcrumbProps {
   variant?: "default" | "light";
 }
 
-export const NavigationBreadcrumb = memo(function NavigationBreadcrumb({
+export function NavigationBreadcrumb({
   items,
   variant = "default",
 }: NavigationBreadcrumbProps) {
@@ -46,4 +45,4 @@ export const NavigationBreadcrumb = memo(function NavigationBreadcrumb({
       </ol>
     </nav>
   );
-});
+}
