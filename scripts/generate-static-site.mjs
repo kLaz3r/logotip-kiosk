@@ -300,7 +300,10 @@ ${headExtras}
 </head>
 <body>
 ${body}
-<script>${js}</script>
+<script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+${js}
+</script>
 </body>
 </html>`;
 }
@@ -663,14 +666,6 @@ for (const f of pubFiles) {
   try {
     await fs.copyFile(path.join(PUBLIC_DIR, f), path.join(OUT_DIR, f));
   } catch { /* skip */ }
-}
-
-// Copy SW-related files
-const pubEntries = await fs.readdir(PUBLIC_DIR);
-for (const f of pubEntries) {
-  if (f.startsWith("workbox-") || f.startsWith("swe-worker-")) {
-    await fs.copyFile(path.join(PUBLIC_DIR, f), path.join(OUT_DIR, f));
-  }
 }
 
 const catCount = categories.length;
