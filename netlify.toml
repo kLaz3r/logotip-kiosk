@@ -1,14 +1,12 @@
 # Netlify configuration for Logotip Kiosk
 # Serves the pure static HTML build (dist-static/) — zero framework JS.
 
-[[plugins]]
-package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-  skip = true
-
 [build]
   command = "pnpm generate:static"
   publish = "dist-static"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [[headers]]
   for = "/sw.js"
