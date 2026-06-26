@@ -1,0 +1,12 @@
+<script>
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.back-btn');
+    if(!btn)return;
+    e.preventDefault();
+    if(window.history.length>1){
+      window.history.back();
+    }else{
+      location.href=btn.getAttribute('data-return')||'/';
+    }
+  });
+</script>

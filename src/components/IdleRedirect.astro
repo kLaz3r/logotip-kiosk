@@ -1,0 +1,11 @@
+<script>
+  var t;
+  function reset(){
+    clearTimeout(t);
+    t=setTimeout(function(){location.href='/'},90000);
+  }
+  ['mousemove','mousedown','keypress','touchstart','scroll'].forEach(function(e){
+    document.addEventListener(e,reset,{passive:true});
+  });
+  reset();
+</script>

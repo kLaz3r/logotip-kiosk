@@ -1,0 +1,103 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BackButtonScript from "@/components/BackButtonScript.astro";
+import IdleRedirect from "@/components/IdleRedirect.astro";
+import { getDesignById, getCategories, getDesigns } from "@/lib/catalogue";
+
+export function getStaticPaths() {
+  return getDesigns().map((d) => ({ params: { id: d.id } }));
+}
+
+const { id } = Astro.params;
+const design = getDesignById(id!);
+if (!design) return Astro.redirect("/404");
+
+const cat = getCategories().find((c) => c.id === design.categoryId);
+const subcat = cat?.subcategories?.find((s) => s.id === design.subcategoryId);
+
+const returnHref = subcat
+  ? `/${cat!.slug}/${subcat.slug}`
+  : cat
+    ? `/${cat.slug}`
+    : "/";
+
+const bc = [{ label: "Acas\u0103", href: "/" }];
+if (cat) bc.push({ label: cat.name, href: `/${cat.slug}` });
+if (subcat) bc.push({ label: subcat.name, href: `/${cat.slug}/${subcat.slug}` });
+bc.push({ label: design.name });
+
+const pricingEntries = Object.entries(design.pricing);
+const hasTags = Boolean(design.tags?.length);
+const priceRange = design.priceRange;
+const hasMeta = design.materials?.length || design.sizes?.length || design.turnaroundTime;
+
+function formatRon(n: number) {
+  return n.toLocaleString("ro-RO") + " RON";
+}
+
+const title = `${design.name} - ${cat?.name ?? "Design"} - Logotip`;
+---
+
+<Layout {title}>
+  <main class="page">
+    <div class="page-header">
+      <a href={returnHref} class="back-btn" aria-label="Inapoi" data-return={returnHref}>&larr;&nbsp;Inapoi</a>
+      <div style="min-width:0">
+        <h1>&nbsp;</h1>
+        <div class="breadcrumb">
+          {bc.map((b, i) => {
+            const isLast = i === bc.length - 1;
+            return (
+              <>
+                {b.href && !isLast ? <a href={b.href}>{b.label}</a> : <span>{b.label}</span>}
+                {!isLast && <>&nbsp;<span>/</span>&nbsp;</>}
+              </>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="detail-img">
+        <img src={design.image} alt={design.name} loading="eager" />
+      </div>
+      <div class="detail-info">
+        <h1>{design.name}</h1>
+        {hasTags && (
+          <div class="tags">
+            {design.tags!.map((t) => <span class="tag">{t}</span>)}
+          </div>
+        )}
+        {design.description && <p class="desc">{design.description}</p>}
+        <div class="pricing-box">
+          <h2>Pre&#539;uri</h2>
+          {priceRange && (
+            <p class="price-summary">
+              {priceRange.min === priceRange.max
+                ? `Fix ${formatRon(priceRange.min)}`
+                : `De la ${formatRon(priceRange.min)} p&acirc;n&#259; la ${formatRon(priceRange.max)}`}
+            </p>
+          )}
+          {pricingEntries.map(([type, price]) => (
+            <div class="price-row">
+              <span class="label">{type}</span>
+              <span class="value">{formatRon(price)}</span>
+            </div>
+          ))}
+        </div>
+        {hasMeta && (
+          <div class="meta-info">
+            {design.materials?.length && <p>Materiale: {design.materials.join(", ")}</p>}
+            {design.sizes?.length && <p>M&#259;rimi: {design.sizes.join(", ")}</p>}
+            {design.turnaroundTime && <p>Timp execu&#539;ie: {design.turnaroundTime}</p>}
+          </div>
+        )}
+        <div class="order-cta">
+          Pentru a comanda, discutati cu un operator.
+        </div>
+      </div>
+    </div>
+  </main>
+  <BackButtonScript />
+  <IdleRedirect />
+</Layout>

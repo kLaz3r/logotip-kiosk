@@ -1,48 +1,21 @@
 {
   "name": "logotip-kiosk",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
-    "build": "next build --webpack",
-    "check": "next lint && tsc --noEmit",
-    "dev": "next dev --turbopack",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "preview": "next build && next start",
-    "start": "next start",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "typecheck": "tsc --noEmit",
-    "generate:catalogue": "node ./scripts/generateCatalogue.mjs",
-    "generate:static": "node ./scripts/generate-static-site.mjs",
-    "serve:static": "node ./scripts/generate-static-site.mjs && npx serve dist-static"
+    "tauri": "tauri"
   },
   "dependencies": {
-    "@ducanh2912/next-pwa": "^10.2.9",
-    "@t3-oss/env-nextjs": "^0.13.11",
-    "next": "^16.2.3",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "zod": "^4.3.6"
+    "@tauri-apps/api": "^2.0.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.5",
-    "@tailwindcss/postcss": "^4.2.2",
-    "@types/node": "^25.5.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "eslint": "^9.37.0",
-    "eslint-config-next": "^16.2.3",
-    "postcss": "^8.5.9",
-    "prettier": "^3.8.1",
-    "prettier-plugin-tailwindcss": "^0.7.2",
-    "tailwindcss": "^4.2.2",
-    "typescript": "^6.0.2",
-    "typescript-eslint": "^8.58.1"
-  },
-  "ct3aMetadata": {
-    "initVersion": "7.39.3"
-  },
-  "packageManager": "pnpm@10.18.0"
+    "@astrojs/check": "^0.9.4",
+    "@tauri-apps/cli": "^2.0.0",
+    "astro": "^5.0.0",
+    "typescript": "^5.5.0"
+  }
 }

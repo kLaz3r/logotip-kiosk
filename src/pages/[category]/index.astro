@@ -1,0 +1,89 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import GridScript from "@/components/GridScript.astro";
+import IdleRedirect from "@/components/IdleRedirect.astro";
+import {
+  getCategories,
+  getCategoryBySlug,
+  getDesignsByCategory,
+  getFirstImage,
+} from "@/lib/catalogue";
+
+export function getStaticPaths() {
+  return getCategories().map((cat) => ({ params: { category: cat.slug } }));
+}
+
+const { category: slug } = Astro.params;
+const cat = getCategoryBySlug(slug!);
+if (!cat) return Astro.redirect("/404");
+
+const hasSubs = Boolean(cat.subcategories?.length);
+const ITEMS = 6;
+
+const items = hasSubs
+  ? cat.subcategories!.map((sc) => ({
+      id: sc.id,
+      name: sc.name,
+      slug: `${cat.slug}/${sc.slug}`,
+      image: getFirstImage(cat.id, sc.id),
+    }))
+  : getDesignsByCategory(cat.id);
+
+const isDesign = !hasSubs;
+const totalPages = Math.ceil(items.length / ITEMS);
+const title = `${cat.name} - Logotip`;
+---
+
+<Layout {title}>
+  <main class="page">
+    <div class="page-header">
+      <a href="/" class="back-btn" aria-label="Inapoi" data-return="/">&larr;&nbsp;Inapoi</a>
+      <div style="min-width:0">
+        <h1>{cat.name}</h1>
+        <div class="breadcrumb">
+          <a href="/">Acas&#259;</a>&nbsp;<span>/</span>&nbsp;<span>{cat.name}</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid-outer" data-total-pages={totalPages}>
+      <div class="grid-inner">
+        {
+          Array.from({ length: totalPages }, (_, p) => (
+            <div class={`page-block${p === 0 ? " active" : ""}`} data-page={p + 1}>
+              {items.slice(p * ITEMS, (p + 1) * ITEMS).map((item: any) => (
+                isDesign ? (
+                  <a href={`/design/${item.id}/`} class="card">
+                    <div class="card-img">
+                      <img src={item.image} alt={item.name} loading="lazy" />
+                    </div>
+                    <div class="card-body"><h4>{item.name}</h4></div>
+                  </a>
+                ) : (
+                  <a href={`/${item.slug}`} class="card">
+                    <div class="card-img">
+                      {item.image && <img src={item.image} alt={item.name} loading="lazy" />}
+                    </div>
+                    <div class="card-body"><h3>{item.name}</h3></div>
+                  </a>
+                )
+              ))}
+            </div>
+          ))
+        }
+      </div>
+      {totalPages > 1 && (
+        <div class="pagination">
+          <button class="prev-btn" onclick="goPage(-1)" disabled>&larr;&nbsp;Anterior</button>
+          {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => (
+            <button data-page={i + 1} onclick={`showPage(${i + 1});updatePagination(${i + 1})`} class={i === 0 ? "active" : ""}>
+              {i + 1}
+            </button>
+          ))}
+          <button class="next-btn" onclick="goPage(1)" disabled={totalPages <= 1}>Urm&#259;tor&nbsp;&rarr;</button>
+        </div>
+      )}
+    </div>
+  </main>
+  <GridScript />
+  <IdleRedirect />
+</Layout>

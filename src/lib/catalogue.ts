@@ -1,85 +1,56 @@
-import data from "~/data/catalogue.json";
-import type { CatalogueData, Category, Design } from "~/data/types";
+import type { CatalogueData, Category, Design } from "@/data/types";
+import catalogueRaw from "@/data/catalogue.json";
 
-const catalogueData = data as unknown as CatalogueData;
+const data = catalogueRaw as unknown as CatalogueData;
 
-if (!catalogueData?.categories || !catalogueData?.designs) {
-  throw new Error("Invalid catalogue data");
-}
-
-// Memoization caches for expensive lookups
 const categorySlugCache = new Map<string, Category | undefined>();
 const designIdCache = new Map<string, Design | undefined>();
 const designsByCategoryCache = new Map<string, Design[]>();
 const firstImageCache = new Map<string, string | undefined>();
 
 export function getCategories(): Category[] {
-  return catalogueData.categories;
+  return data.categories;
 }
 
 export function getCategoryBySlug(slug: string): Category | undefined {
   if (!categorySlugCache.has(slug)) {
-    const category = catalogueData.categories.find((cat) => cat.slug === slug);
-    categorySlugCache.set(slug, category);
+    categorySlugCache.set(slug, data.categories.find((c) => c.slug === slug));
   }
   return categorySlugCache.get(slug);
 }
 
-export function getDesignsByCategory(
-  categoryId: string,
-  subcategoryId?: string,
-): Design[] {
-  const cacheKey = subcategoryId
-    ? `${categoryId}:${subcategoryId}`
-    : categoryId;
-
-  if (!designsByCategoryCache.has(cacheKey)) {
-    const designs = catalogueData.designs.filter((design) => {
-      if (subcategoryId) {
-        return (
-          design.categoryId === categoryId &&
-          design.subcategoryId === subcategoryId
-        );
-      }
-      return design.categoryId === categoryId;
-    });
-    designsByCategoryCache.set(cacheKey, designs);
+export function getDesignsByCategory(categoryId: string, subcategoryId?: string): Design[] {
+  const key = subcategoryId ? `${categoryId}:${subcategoryId}` : categoryId;
+  if (!designsByCategoryCache.has(key)) {
+    designsByCategoryCache.set(
+      key,
+      data.designs.filter((d) =>
+        subcategoryId
+          ? d.categoryId === categoryId && d.subcategoryId === subcategoryId
+          : d.categoryId === categoryId,
+      ),
+    );
   }
-
-  return designsByCategoryCache.get(cacheKey)!;
+  return designsByCategoryCache.get(key)!;
 }
 
 export function getDesignById(id: string): Design | undefined {
   if (!designIdCache.has(id)) {
-    const design = catalogueData.designs.find((design) => design.id === id);
-    designIdCache.set(id, design);
+    designIdCache.set(id, data.designs.find((d) => d.id === id));
   }
   return designIdCache.get(id);
 }
 
 export function getDesigns(): Design[] {
-  return catalogueData.designs;
+  return data.designs;
 }
 
-export function getFirstImageForCategory(
-  categoryId: string,
-  subcategoryId?: string,
-): string | undefined {
-  const cacheKey = subcategoryId
-    ? `${categoryId}:${subcategoryId}`
-    : categoryId;
-
-  if (!firstImageCache.has(cacheKey)) {
-    const designs = getDesignsByCategory(categoryId, subcategoryId);
-    const image = designs.length > 0 ? designs[0]?.image : undefined;
-    firstImageCache.set(cacheKey, image);
+export function getFirstImage(categoryId: string, subcategoryId?: string): string | undefined {
+  const key = subcategoryId ? `${categoryId}:${subcategoryId}` : categoryId;
+  if (!firstImageCache.has(key)) {
+    firstImageCache.set(key, getDesignsByCategory(categoryId, subcategoryId)[0]?.image);
   }
-
-  return firstImageCache.get(cacheKey);
-}
-
-export function getAllCategorySlugs(): string[] {
-  return catalogueData.categories.map((cat) => cat.slug);
+  return firstImageCache.get(key);
 }
 
 export function getAllSubcategoryPaths(): Array<{
@@ -87,17 +58,12 @@ export function getAllSubcategoryPaths(): Array<{
   subcategory: string;
 }> {
   const paths: Array<{ category: string; subcategory: string }> = [];
-
-  catalogueData.categories.forEach((category) => {
-    if (category.subcategories && category.subcategories.length > 0) {
-      category.subcategories.forEach((subcategory) => {
-        paths.push({
-          category: category.slug,
-          subcategory: subcategory.slug,
-        });
-      });
+  for (const cat of data.categories) {
+    if (cat.subcategories?.length) {
+      for (const sc of cat.subcategories) {
+        paths.push({ category: cat.slug, subcategory: sc.slug });
+      }
     }
-  });
-
+  }
   return paths;
 }

@@ -1,0 +1,96 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <title>{title}</title>
+    <meta name="description" content="Logotip Kiosk - catalog produse personalizate" />
+    <meta name="theme-color" content="#360D36" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Logotip" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="preload"
+      href="/fonts/FuturaPT-Book.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <style is:global>
+      @font-face{font-family:'FuturaPT';src:url('/fonts/FuturaPT-Book.woff2') format('woff2');font-weight:400;font-display:swap}
+      @font-face{font-family:'FuturaPT';src:url('/fonts/FuturaPT-Demi.woff2') format('woff2');font-weight:600;font-display:swap}
+      @font-face{font-family:'FuturaPT';src:url('/fonts/FuturaPT-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+      :root{--f:'FuturaPT'}
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html,body{height:100%;overflow:hidden;position:fixed;width:100%}
+      body{font-family:var(--f),ui-sans-serif,system-ui,sans-serif;background-color:#f8f5f7;background-image:url('/logotip-bg.svg');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;color:#2e112e;-webkit-font-smoothing:antialiased;user-select:none;-webkit-user-select:none;overscroll-behavior-y:contain}
+      a{color:inherit;text-decoration:none}
+      img{display:block;max-width:100%}
+      button{border:none;background:none;cursor:pointer;font:inherit;color:inherit;padding:0}
+      .page{height:100%;display:flex;flex-direction:column;padding:1.25rem 1rem;min-height:0}
+      .page-header{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.25rem;flex-shrink:0}
+      .page-header h1{font-family:var(--f);font-size:1.5rem;font-weight:700;color:#fff;line-height:1.2}
+      .page-header .breadcrumb{font-size:.75rem;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:.25rem;margin-top:.125rem}
+      .page-header .breadcrumb a:hover{color:#fff}
+      .page-header .breadcrumb span:last-child{color:#fff}
+      .logo{margin-left:auto;height:2.5rem;width:auto;flex-shrink:0}
+      .back-btn{display:inline-flex;align-items:center;gap:.25rem;border-radius:9999px;border:1px solid rgba(0,0,0,.1);background:#fff;padding:.375rem .75rem;font-size:.875rem;font-weight:500;color:#2e112e;box-shadow:0 1px 2px rgba(0,0,0,.05);flex-shrink:0}
+      .back-btn:active{transform:scale(.98)}
+      .grid-outer{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column}
+      .grid-inner{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:.75rem;flex:1;min-height:0;width:100%;margin:0 auto}
+      .grid-inner>*{min-height:0}
+      .grid-inner.swiping{transition:transform .3s cubic-bezier(.4,0,.2,1)}
+      .grid-inner.swipe-in{transition:none}
+      .card{display:flex;flex-direction:column;height:100%;overflow:hidden;border-radius:.75rem;border:1px solid rgba(0,0,0,.1);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+      .card:active{transform:scale(.98)}
+      .card-img{position:relative;flex:1;min-height:0;background:#f8f5f7}
+      .card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+      .card-body{padding:.6rem .75rem;text-align:center}
+      .card-body h2,.card-body h3,.card-body h4{font-family:var(--f);font-size:1.05rem;font-weight:600;color:#2e112e;line-height:1.2}
+      .page-block{display:none}
+      .page-block.active{display:contents}
+      .pagination{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.75rem;flex-shrink:0}
+      .pagination button{border-radius:.375rem;border:1px solid rgba(0,0,0,.1);background:#fff;padding:.3rem .55rem;font-size:.8rem;font-weight:500;color:#2e112e;min-width:2rem}
+      .pagination button.active{background:#2e112e;color:#fff;border-color:#2e112e}
+      .pagination button:disabled{opacity:.4;cursor:default}
+      .detail{display:flex;flex:1;min-height:0;gap:2rem;overflow-y:auto}
+      .detail-img{flex:0 0 50%;position:relative;border-radius:.75rem;border:1px solid rgba(0,0,0,.1);background:#fff;overflow:hidden;aspect-ratio:1;max-height:100%;align-self:flex-start}
+      .detail-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+      .detail-info{flex:1;display:flex;flex-direction:column;gap:.75rem;overflow-y:auto;padding-bottom:.5rem;min-height:0}
+      .detail-info h1{font-family:var(--f);font-size:1.75rem;font-weight:700;color:#fff;line-height:1.15}
+      .tags{display:flex;flex-wrap:wrap;gap:.4rem}
+      .tag{background:#fff;color:#2e112e;border-radius:9999px;padding:.2rem .65rem;font-size:.7rem;font-weight:500}
+      .desc{color:rgba(255,255,255,.8);font-size:.9rem;line-height:1.4}
+      .pricing-box{border-radius:.75rem;border:1px solid rgba(0,0,0,.1);background:#fff;padding:1rem 1.25rem;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+      .pricing-box h2{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#2e112e;margin-bottom:.75rem}
+      .price-summary{font-size:.8rem;font-weight:500;color:#2e112e;margin-bottom:.5rem}
+      .price-row{display:flex;justify-content:space-between;align-items:center;padding:.65rem .75rem;border-radius:.4rem;border:1px solid rgba(0,0,0,.08);background:rgba(46,17,46,.02);margin-bottom:.5rem}
+      .price-row:last-child{margin-bottom:0}
+      .price-row .label{font-size:.85rem;font-weight:500;color:#2e112e}
+      .price-row .value{font-size:.85rem;font-weight:600;color:#2e112e}
+      .meta-info{font-size:.8rem;color:rgba(255,255,255,.75);line-height:1.6}
+      .order-cta{border-radius:.75rem;border:1px solid rgba(0,0,0,.1);background:#fff;padding:1rem 1.25rem;text-align:center;font-weight:600;color:#2e112e;font-size:.9rem;margin-top:auto;flex-shrink:0}
+      @media screen and (orientation:portrait){body::before{content:"Rotiti dispozitivul in mod peisaj";position:fixed;top:0;left:0;width:100%;height:100%;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;text-align:center;z-index:9999;padding:1rem}body>*:not(style){display:none!important}}
+    </style>
+  </head>
+  <body>
+    <slot />
+    <script>
+      if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js',{scope:'/'})}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import GridScript from "@/components/GridScript.astro";
+import IdleRedirect from "@/components/IdleRedirect.astro";
+import { getCategories, getFirstImage } from "@/lib/catalogue";
+
+const categories = getCategories();
+const catImages: Record<string, string | undefined> = {};
+for (const cat of categories) {
+  catImages[cat.id] = getFirstImage(cat.id);
+}
+
+const ITEMS = 6;
+const totalPages = Math.ceil(categories.length / ITEMS);
+---
+
+<Layout title="Logotip Kiosk">
+  <main class="page">
+    <div class="page-header">
+      <div style="min-width:0">
+        <h1>Categorii de produse</h1>
+      </div>
+      <img src="/logo.svg" alt="Logotip" class="logo" width="140" height="40" />
+    </div>
+    <div class="grid-outer" data-total-pages={totalPages}>
+      <div class="grid-inner">
+        {
+          Array.from({ length: totalPages }, (_, p) => (
+            <div class={`page-block${p === 0 ? " active" : ""}`} data-page={p + 1}>
+              {categories.slice(p * ITEMS, (p + 1) * ITEMS).map((cat) => {
+                const img = catImages[cat.id];
+                return (
+                  <a href={`/${cat.slug}`} class="card">
+                    <div class="card-img">
+                      {img && <img src={img} alt={cat.name} loading="lazy" />}
+                    </div>
+                    <div class="card-body"><h3>{cat.name}</h3></div>
+                  </a>
+                );
+              })}
+            </div>
+          ))
+        }
+      </div>
+      {totalPages > 1 && (
+        <div class="pagination">
+          <button class="prev-btn" onclick="goPage(-1)" disabled>&larr;&nbsp;Anterior</button>
+          {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => (
+            <button data-page={i + 1} onclick={`showPage(${i + 1});updatePagination(${i + 1})`} class={i === 0 ? "active" : ""}>
+              {i + 1}
+            </button>
+          ))}
+          <button class="next-btn" onclick="goPage(1)" disabled={totalPages <= 1}>Urm&#259;tor&nbsp;&rarr;</button>
+        </div>
+      )}
+    </div>
+  </main>
+  <GridScript />
+  <IdleRedirect />
+</Layout>

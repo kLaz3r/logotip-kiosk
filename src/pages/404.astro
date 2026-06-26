@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BackButtonScript from "@/components/BackButtonScript.astro";
+import IdleRedirect from "@/components/IdleRedirect.astro";
+---
+
+<Layout title="404 - Logotip">
+  <main class="page">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:1rem;text-align:center">
+      <h1 style="font-family:var(--f);font-size:3rem;font-weight:700;color:#fff">404</h1>
+      <p style="color:rgba(255,255,255,.7);font-size:1.2rem">Pagina nu a fost g&#259;sit&#259;</p>
+      <a href="/" class="back-btn" style="font-size:1rem;padding:.5rem 1.5rem">&larr; &Icirc;napoi acas&#259;</a>
+    </div>
+  </main>
+  <BackButtonScript />
+  <IdleRedirect />
+</Layout>
